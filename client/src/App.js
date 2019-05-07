@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Elements, StripeProvider} from 'react-stripe-elements';
+import CheckoutForm from './pages/CheckoutForm';
 import { Route, Switch } from 'react-router-dom';
 import LoginForm from './pages/Auth/LoginForm';
 import SignupForm from './pages/Auth/SignupForm';
@@ -62,10 +64,38 @@ class App extends Component {
     });
 	}
 
+
+	constructor(props) {
+		super(props);
+		this.state = {complete: false};
+		this.submit = this.submit.bind(this);
+	}
+
+	async submit(ev) {
+		let {token} = await this.props.stripe.createToken({name: "Name"});
+		let response = await fetch("/charge", {
+			method: "POST",
+			headers: {"Content-Type": "text/plain"},
+			body: token.id
+		});
+		if (response.ok) this.setState({complete: true});
+	}
+
+
 	render() {
+		if (this.state.complete) return <h1>Purchase Complete</h1>;
 		return (
 			<div className="App">
-        { this.state.loggedIn && (
+				<StripeProvider apiKey="pk_test_ou8oZm0fhBw9ueXnkneQtPt400MTOGCqug">
+					<div className="example">
+						<h1> React Stripe Elements Example</h1>
+						<Elements>
+							<CheckoutForm />
+						</Elements>
+					</div>
+				</StripeProvider>
+
+        {/* { this.state.loggedIn && (
           <div>
             <Nav user={this.state.user} logout={this.logout}/>
             <div className="main-view">
@@ -84,7 +114,7 @@ class App extends Component {
             <Route exact path="/books" component={() => <LoginForm user={this.login}/>} />
             <Route exact path="/signup" component={SignupForm} />
           </div>
-        )}
+        )} */}
 			</div>
 		)
 	}

@@ -1,1 +1,2 @@
-# tripster-life
+# Tripster Life
+

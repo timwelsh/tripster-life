@@ -1,44 +1,60 @@
 {
-  "name": "reactreadinglist-auth-server",
+  "name": "apiauthentication",
   "version": "1.0.0",
-  "description": "Full Stack React App with Authentication",
-  "main": "server/server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server/server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "install": "cd client && yarn install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "server-dev": "cross-env NODE_ENV=prod nodemon server/index.js",
+    "client-dev": "npm start --prefix client",
+    "start-dev": "concurrently \"npm run server-dev\" \"npm run client-dev\"",
+    "test": "cross-env NODE_ENV=test mocha --timeout 5000 __tests__/server/**/*.test.js",
+    "report": "cross-env NODE_ENV=test nyc --reporter=lcov mocha --timeout 5000 __tests__/server/**/*.test.js",
+    "text-report": "cross-env NODE_ENV=test nyc --reporter=text-summary mocha --timeout 5000 __tests__/server/**/*.test.js",
+    "nyc": "cross-env NODE_ENV=test nyc mocha --timeout 5000 __tests__/server/**/*.test.js"
   },
-  "engines": {
-    "node": "8.9.4",
-    "npm": "5.6.x",
-    "yarn": "1.4.0"
-  },
-  "author": "",
+  "author": "TripsterLife",
   "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^3.5.0",
-    "nodemon": "^1.11.0"
-  },
   "dependencies": {
     "axios": "^0.18.0",
-    "bcrypt": "^3.0.2",
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "connect-mongo": "^2.0.1",
-    "dotenv": "^6.1.0",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
     "express": "^4.16.4",
-    "express-session": "^1.15.6",
-    "if-env": "^1.0.4",
+    "express-promise-router": "^3.0.3",
+    "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.3.4",
+    "mongoose": "^5.4.22",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
-    "passport-local": "^1.0.0",
-    "react-stripe-elements": "^3.0.0",
-    "stripe": "^6.31.2"
+    "passport-facebook-token": "^3.3.0",
+    "passport-google-plus-token": "^2.1.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "faker": "^4.1.0",
+    "mocha": "^6.1.1",
+    "nodemon": "^1.18.10",
+    "nyc": "^13.3.0",
+    "rewire": "^4.0.1",
+    "sinon": "^7.3.1",
+    "sinon-chai": "^3.3.0"
+  },
+  "nyc": {
+    "exclude": [
+      "server/app.js",
+      "server/configuration/index.js",
+      "server/passport.js",
+      "server/models/**/*.js",
+      "server/helpers/**/*.js",
+      "__tests__",
+      "node_modules"
+    ],
+    "cache": false,
+    "report-dir": "./__tests__/report"
   }
 }

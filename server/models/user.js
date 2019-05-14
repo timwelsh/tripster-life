@@ -1,45 +1,77 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 const bcrypt = require('bcryptjs');
-mongoose.promise = Promise;
+const Schema = mongoose.Schema;
 
-// Define userSchema
+// Create a schema
 const userSchema = new Schema({
-	firstName: { type: String, unique: false },
-	lastName: { type: String, unique: false },
-  username: { type: String, unique: false, required: false },
-  password: { type: String, unique: false, required: false },
-  books: [
-    {
-      // Store ObjectIds in the array
-      type: Schema.Types.ObjectId,
-      // The ObjectIds will refer to the ids in the Book model
-      ref: "Book"
+  methods: {
+    type: [String],
+    required: true
+  },
+  local: {
+    email: {
+      type: String,
+      lowercase: true
+    },
+    password: {
+      type: String
     }
-  ]
+  },
+  google: {
+    id: {
+      type: String
+    },
+    email: {
+      type: String,
+      lowercase: true
+    }
+  },
+  facebook: {
+    id: {
+      type: String
+    },
+    email: {
+      type: String,
+      lowercase: true
+    }
+  }
 });
 
-// Define schema methods
-userSchema.methods = {
-	checkPassword: function(inputPassword) {
-		return bcrypt.compareSync(inputPassword, this.password);
-	},
-	hashPassword: plainTextPassword => {
-		return bcrypt.hashSync(plainTextPassword, 10);
-	}
-};
+userSchema.pre('save', async function (next) {
+  try {
+    console.log('entered');
+    if (!this.methods.includes('local')) {
+      next();
+    }
+    //the user schema is instantiated
+    const user = this;
+    //check if the user has been modified to know if the password has already been hashed
+    if (!user.isModified('local.password')) {
+      next();
+    }
+    // Generate a salt
+    const salt = await bcrypt.genSalt(10);
+    // Generate a password hash (salt + hash)
+    const passwordHash = await bcrypt.hash(this.local.password, salt);
+    // Re-assign hashed version over original, plain text password
+    this.local.password = passwordHash;
+    console.log('exited');
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
 
-// Define hooks for pre-saving
-userSchema.pre('save', function(next) {
-	if (!this.password) {
-		console.log('No password provided!');
-		next();
-	} else {
-		this.password = this.hashPassword(this.password);
-		next();
-	}
-})
+userSchema.methods.isValidPassword = async function (newPassword) {
+  try {
+    return await bcrypt.compare(newPassword, this.local.password);
+  } catch (error) {
+    throw new Error(error);
+  }
+}
 
-// Create reference to User & export
-const User = mongoose.model('User', userSchema);
+// Create a model
+const User = mongoose.model('user', userSchema);
+
+// Export the model
 module.exports = User;

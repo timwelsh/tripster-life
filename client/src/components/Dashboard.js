@@ -33,9 +33,9 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        This is a Dashboard component
+        Dashboard component
         <br/>
-        Our secret: <h3>{this.props.secret}</h3>
+        secret: <h3>{this.props.secret}</h3>
 
         <h2>Link your social media accounts</h2>
         <FacebookLogin

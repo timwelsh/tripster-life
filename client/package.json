@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-facebook-login": "^4.1.1",
@@ -14,14 +13,6 @@
     "redux": "^4.0.1",
     "redux-form": "^8.1.0",
     "redux-thunk": "^2.3.0"
-=======
-    "axios": "^0.16.2",
-    "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2",
-    "react-materialize": "^3.3.0",
-    "react-router-dom": "^4.1.2",
-    "react-scripts": "1.0.14"
->>>>>>> pages
   },
   "scripts": {
     "start": "react-scripts start",

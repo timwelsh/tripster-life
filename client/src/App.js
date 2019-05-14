@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import {Elements, StripeProvider} from 'react-stripe-elements';
 import CheckoutForm from './pages/CheckoutForm';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AUTH from './utils/AUTH';
+import Landing from './pages/Landing';
+import About from "./pages/About";
+import Benefits from "./pages/Benefits";
+import Contact from "./pages/Contact";
+import NoMatch from "./pages/NoMatch";
 import LoginForm from './pages/Auth/LoginForm';
 import SignupForm from './pages/Auth/SignupForm';
-import Nav from "./components/Nav";
-import Books from './pages/Books';
-import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
-import AUTH from './utils/AUTH';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 class App extends Component {
   
@@ -68,8 +71,10 @@ class App extends Component {
 	render() {
 		if (this.state.complete) return <h1>Purchase Complete</h1>;
 		return (
+
 			<div className="App">
-			{/* Code for Stripe when ready */}
+
+				{/* Code for Stripe when ready */}
 				{/* <StripeProvider apiKey="pk_test_ou8oZm0fhBw9ueXnkneQtPt400MTOGCqug">
 					<div className="example">
 						<h1> React Stripe Elements Example</h1>
@@ -81,23 +86,33 @@ class App extends Component {
 
         { this.state.loggedIn && (
           <div>
-            <Nav user={this.state.user} logout={this.logout}/>
+            <Header user={this.state.user} logout={this.logout}/>
             <div className="main-view">
               <Switch>
-                <Route exact path="/" component={() => <Books user={this.state.user}/>} />
-                <Route exact path="/books" component={() => <Books user={this.state.user}/>} />
-                <Route exact path="/books/:id" component={Detail} />
-                <Route component={NoMatch} />
+                <Route exact path="/" component={Landing} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/benefits" component={Benefits} />
+								<Route exact path="/contact" component={Contact} />
+                {/* <Route component={NoMatch} /> */}
               </Switch>
             </div>
+						<Footer />
           </div>
         )}
         { !this.state.loggedIn && (
-          <div className="auth-wrapper" style={{paddingTop:40}}>
-            <Route exact path="/" component={() => <LoginForm login={this.login}/>} />
-            <Route exact path="/books" component={() => <LoginForm user={this.login}/>} />
-            <Route exact path="/signup" component={SignupForm} />
-          </div>
+					<div>
+						<Header />
+						<div className="auth-wrapper" style={{paddingTop:40}}>
+							<Route exact path="/" component={() => <LoginForm login={this.login}/>} />
+							<Route exact path="/about" component={About} />
+							<Route exact path="/benefits" component={Benefits} />
+							<Route exact path="/contact" component={Contact} />
+							{/* <Route component={NoMatch} /> */}
+							{/* <Route exact path="/books" component={() => <LoginForm user={this.login}/>} /> */}
+							{/* <Route exact path="/signup" component={SignupForm} /> */}
+						</div>
+						<Footer />
+					</div>
         )}
 			</div>
 		)

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Logo from '../utils/logo-1.png';
 
 import * as actions from '../actions';
 
@@ -16,32 +17,53 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{ marginBottom: '30px' }}>
-        <Link className="navbar-brand" to="/">Tripster Life</Link>
-
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              {/* <Link className="nav-link" to="/dashboard">Dashboard</Link> */}
-            </li>
-          </ul>
-
-          <ul className="nav navbar-nav ml-auto">
+      <div>
+        <nav>
+          <div class="nav-wrapper">
+            <a href="/" class="brand-logo">
+              <img src={Logo} style={{maxWidth:225, position:"absolute", top:-25, left:-45}}/>
+            </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
             { !this.props.isAuth ?
-              [<li className="nav-item" key="signup">
-                <Link className="nav-link" to="/signup">Sign Up</Link>
-              </li>,
-              <li className="nav-item" key="signin">
-                <Link className="nav-link" to="/signin">Sign In</Link>
-              </li>] : null }
-            
+              [
+                <li><Link to="/signup">Sign in</Link></li>,
+                <li><Link to="/about">About</Link></li>,
+                <li><Link to="/benefits">Benefits</Link></li>,
+                <li><Link to="/contact">Contact</Link></li>,
+                ] : null }
+
             { this.props.isAuth ?
-              <li className="nav-item">
-                <Link className="nav-link" to="/signout" onClick={this.signOut}>Sign Out</Link>
-              </li> : null }
-          </ul>
-        </div>
-      </nav>
+              [
+                <li><Link to="/signout">Sign out</Link></li>,
+                <li><Link to="/about">About</Link></li>,
+                <li><Link to="/benefits">Benefits</Link></li>,
+                <li><Link to="/contact">Contact</Link></li>,
+                ] : null }
+            </ul>
+          </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+          { !this.props.isAuth ?
+            [
+              <li><Link to="/signout">Sign out</Link></li>,
+              <li><Link to="/about">About</Link></li>,
+              <li><Link to="/benefits">Benefits</Link></li>,
+              <li><Link to="/contact">Contact</Link></li>,
+            ] : null 
+          }
+
+          { this.props.isAuth ?
+            [
+              <li><Link to="/signout">Sign out</Link></li>,
+              <li><Link to="/about">About</Link></li>,
+              <li><Link to="/benefits">Benefits</Link></li>,
+              <li><Link to="/contact">Contact</Link></li>,
+            ] : null 
+          }
+        </ul>
+      </div>
     );
   }
 }
@@ -53,5 +75,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, actions)(Header);
-
-

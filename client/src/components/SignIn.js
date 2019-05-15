@@ -42,35 +42,37 @@ class SignIn extends Component {
     return (
       <div className="row">
         <div className="col">
-          <form onSubmit={handleSubmit(this.onSubmit)}>
-            <fieldset>
-              <Field
-                name="email"
-                type="text"
-                id="email"
-                label="Enter your email"
-                placeholder="example@example.com"
-                component={ CustomInput } />
-            </fieldset>
-            <fieldset>
-              <Field
-                name="password"
-                type="password"
-                id="password"
-                label="Enter your password"
-                placeholder="yoursuperpassword"
-                component={ CustomInput } />
-            </fieldset>
+          <div className="card">
+            <form onSubmit={handleSubmit(this.onSubmit)}>
+              <fieldset>
+                <Field
+                  name="email"
+                  type="text"
+                  id="email"
+                  label="Enter your email"
+                  placeholder="example@example.com"
+                  component={ CustomInput } />
+              </fieldset>
+              <fieldset>
+                <Field
+                  name="password"
+                  type="password"
+                  id="password"
+                  label="Enter your password"
+                  placeholder="yoursuperpassword"
+                  component={ CustomInput } />
+              </fieldset>
 
-            { this.props.errorMessage ? 
-            <div className="alert alert-danger">
-              { this.props.errorMessage }
-            </div> : null }
+              { this.props.errorMessage ? 
+              <div className="alert alert-danger">
+                { this.props.errorMessage }
+              </div> : null }
 
-            <button type="submit" className="btn btn-primary">Sign In</button>
-          </form>
+              <button type="submit" className="btn btn-primary">Sign In</button>
+            </form>
+          </div>
         </div>
-        <div className="col">
+        {/* <div className="col">
           <div className="text-center">
             <div className="alert alert-primary">
               Or sign in using third-party services
@@ -94,7 +96,7 @@ class SignIn extends Component {
               className="btn btn-outline-danger"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

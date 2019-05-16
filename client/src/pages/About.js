@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-
+import tim from "../utils/tim.png";
 class About extends Component {
 
     render() {
         return (
             <div>
+                <h4>Meet the Tripsters</h4>
                 <div class="row">
                     <div class="col s12 m7">
                     <div class="card">
                         <div class="card-image">
-                        <img src="https://avatars0.githubusercontent.com/u/10411088?s=460&v=4" />
+                        <img src={tim} />
                         <span class="card-title">Tim Welsh</span>
                         </div>
                         <div class="card-content">

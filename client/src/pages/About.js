@@ -11,12 +11,12 @@ class About extends Component {
         return (
             <div>
                 <h4>Meet the Tripsters</h4>
-                <div class="row">
-                    <div class="col s12 m7">
-                    <div class="card">
-                        <div class="card-image">
+                <div className="row">
+                    <div className="col s12 m7" style={style}>
+                    <div className="card hoverable">
+                        <div className="card-image">
                         <img src={tim} />
-                        <span class="card-title">Tim Welsh</span>
+                        <span className="card-title">Tim Welsh</span>
                         </div>
                         <div className="card-content">
                         <p>Tim conceptualized Tripster and is the group's DM (Database Master).</p>

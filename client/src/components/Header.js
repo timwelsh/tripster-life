@@ -5,6 +5,10 @@ import Logo from '../utils/logo-1.png';
 
 import * as actions from '../actions';
 
+const style = {
+    marginBottom: "8rem"
+}
+
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +21,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
+      <div style={style}>
         <nav>
           <div class="nav-wrapper">
             <a href="/" class="brand-logo">

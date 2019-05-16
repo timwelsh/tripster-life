@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import GoogleLogin from 'react-google-login';
-import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+// import GoogleLogin from 'react-google-login';
+// import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
 import * as actions from '../actions';
 import CustomInput from './CustomInput';
@@ -40,62 +40,81 @@ class SignUp extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div className="row">
-        <div className="col">
+      <div>
+        <h4 style={{marginBottom: "2rem"}}>Sign up</h4>
+        <div className="row">
           <form onSubmit={handleSubmit(this.onSubmit)}>
             <fieldset>
-              <Field
-                name="email"
-                type="text"
-                id="email"
-                label="Enter your email"
-                placeholder="example@example.com"
-                component={ CustomInput } />
-            </fieldset>
-            <fieldset>
-              <Field
-                name="password"
-                type="password"
-                id="password"
-                label="Enter your password"
-                placeholder="yoursuperpassword"
-                component={ CustomInput } />
-            </fieldset>
+              <div className="row">
+                <Field
+                  name="firstName"
+                  type="text"
+                  id="firstName"
+                  label="First Name"
+                  component={ CustomInput } />
+                <Field
+                  name="password"
+                  type="password"
+                  id="password"
+                  label="Last Name"
+                  component={ CustomInput } />
+              </div>
+              <div className="row">
+                <Field
+                  name="email"
+                  type="text"
+                  id="email"
+                  label="Email"
+                  component={ CustomInput } />
+                <Field
+                  name="password"
+                  type="password"
+                  id="password"
+                  label="Password"
+                  component={ CustomInput } />
+              </div>
+              <input 
+                name="birthday"
+                type="text" 
+                id="birthday"
+                label="Birthday"
+                class="datepicker" />
 
-            { this.props.errorMessage ? 
-            <div className="alert alert-danger">
-              { this.props.errorMessage }
-            </div> : null }
+              { this.props.errorMessage ? 
+              <div className="alert alert-danger">
+                { this.props.errorMessage }
+              </div> : null }
 
-            <button type="submit" className="btn btn-primary">Sign Up</button>
-          </form>
-        </div>
-        <div className="col">
-          <div className="text-center">
-            <div className="alert alert-primary">
-              Or sign up using third-party services
-            </div>
-            <FacebookLogin
-              appId="string"
-              render={renderProps => (
-                <button style={{ marginRight: 15 }} className="btn btn-primary" onClick={renderProps.onClick}>Facebook</button>
-              )}
-              fields="name,email,picture"
-              callback={this.responseFacebook}
-              cssClass="btn btn-outline-primary"
-            />
-            <GoogleLogin 
-              clientId="string"
-              render={renderProps => (
-                <button className="btn btn-danger" onClick={renderProps.onClick} disabled={renderProps.disabled}>Google</button>
-              )}
-              onSuccess={this.responseGoogle}
-              onFailure={this.responseGoogle}
-              className="btn btn-outline-danger"
-            />
+              <button type="submit" className="btn btn-primary" style={{marginTop: "1rem"}}>Sign Up</button>
+              </fieldset>
+            </form>
           </div>
+          {/* <div className="col">
+            <div className="text-center">
+              <div className="alert alert-primary">
+                Or sign up using third-party services
+              </div>
+              <FacebookLogin
+                appId="string"
+                render={renderProps => (
+                  <button style={{ marginRight: 15 }} className="btn btn-primary" onClick={renderProps.onClick}>Facebook</button>
+                )}
+                fields="name,email,picture"
+                callback={this.responseFacebook}
+                cssClass="btn btn-outline-primary"
+              />
+              <GoogleLogin 
+                clientId="string"
+                render={renderProps => (
+                  <button className="btn btn-danger" onClick={renderProps.onClick} disabled={renderProps.disabled}>Google</button>
+                )}
+                onSuccess={this.responseGoogle}
+                onFailure={this.responseGoogle}
+                className="btn btn-outline-danger"
+              />
+            </div>
+          </div> */}
         </div>
-      </div>
     );
   }
 }

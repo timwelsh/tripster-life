@@ -63,13 +63,22 @@ class RegisterCard extends Component {
                                     </TextInput>
                                 </Row>
                                 <Row>
-                                    <TextInput 
+                                    <input 
                                         birthDate 
-                                        placeholder="DOB (MM/DD/YYYY)" 
-                                        name="borthDate" 
+                                        placeholder="DOB" 
+                                        name="birthDate" 
+                                        onChange={this.handleChange} 
+                                        type="text" 
+                                        class="datepicker" 
+                                    />
+
+                                    {/* <TextInput 
+                                        birthDate 
+                                        placeholder="DOB" 
+                                        name="birthDate" 
                                         onChange={this.handleChange} 
                                     >
-                                    </TextInput>
+                                    </TextInput> */}
                                 </Row>
                                 <Button waves="light" style={{marginRight: '5px', marginBottom: '4rem'}}>
                                 Submit

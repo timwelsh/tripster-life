@@ -40,53 +40,57 @@ class SignIn extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div style={{width:450}}>
-        <h4 style={{marginBottom: "2rem"}}>Sign in</h4>
+      <div className='card hoverable ' style={{width:450, padding:20}}>
+        <span className='card-title'>Login</span>
         <form onSubmit={handleSubmit(this.onSubmit)}>
-          <fieldset>
+          <div>
             <Field
-              name="email"
-              type="text"
-              id="email"
-              label="Email"
+              name='email'
+              type='text'
+              id='email'
+              label='Email'
               component={ CustomInput } />
             <Field
-              name="password"
-              type="password"
-              id="password"
-              label="Password"
+              name='password'
+              type='password'
+              id='password'
+              label='Password'
               component={ CustomInput } />
 
           { this.props.errorMessage ? 
-          <div className="alert alert-danger">
+          <div className='alert alert-danger'>
             { this.props.errorMessage }
           </div> : null }
 
-          <button type="submit" className="btn btn-primary">Login</button>
-          </fieldset>
+          <button type='submit' className='btn btn-primary'>Login</button>
+          </div>
         </form>
-        {/* <div className="col">
-          <div className="text-center">
-            <div className="alert alert-primary">
+
+        <div>
+          <p>Don't have an account yet? Sign up for one <a href='/signup'>here</a>!</p>
+        </div>
+        {/* <div className='col'>
+          <div className='text-center'>
+            <div className='alert alert-primary'>
               Or sign in using third-party services
             </div>
             <FacebookLogin
-              appId="string"
+              appId='string'
               render={renderProps => (
-                <button style={{ marginRight: 15 }} className="btn btn-primary" onClick={renderProps.onClick}>Facebook</button>
+                <button style={{ marginRight: 15 }} className='btn btn-primary' onClick={renderProps.onClick}>Facebook</button>
               )}
-              fields="name,email,picture"
+              fields='name,email,picture'
               callback={this.responseFacebook}
-              cssClass="btn btn-outline-primary"
+              cssClass='btn btn-outline-primary'
             />
             <GoogleLogin 
-              clientId="string"
+              clientId='string'
               render={renderProps => (
-                <button className="btn btn-danger" onClick={renderProps.onClick} disabled={renderProps.disabled}>Google</button>
+                <button className='btn btn-danger' onClick={renderProps.onClick} disabled={renderProps.disabled}>Google</button>
               )}
               onSuccess={this.responseGoogle}
               onFailure={this.responseGoogle}
-              className="btn btn-outline-danger"
+              className='btn btn-outline-danger'
             />
           </div>
         </div> */}

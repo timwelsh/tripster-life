@@ -40,11 +40,10 @@ class SignUp extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div style={{width:450}}>
-        <h4 style={{marginBottom: "2rem"}}>Sign up</h4>
+      <div className='card hoverable ' style={{width:450, padding:20}}>
+        <span className='card-title'>Register</span>
         <div className="row">
           <form onSubmit={handleSubmit(this.onSubmit)}>
-            <fieldset>
               <div className="row">
                 <Field
                   name="firstName"
@@ -73,22 +72,26 @@ class SignUp extends Component {
                   label="Password"
                   component={ CustomInput } />
               </div>
-              <input 
+              {/* <input 
                 name="birthday"
                 type="text" 
                 id="birthday"
                 label="Birthday"
-                class="datepicker" />
+                class="datepicker" /> */}
 
               { this.props.errorMessage ? 
               <div className="alert alert-danger">
                 { this.props.errorMessage }
               </div> : null }
 
-              <button type="submit" className="btn btn-primary" style={{marginTop: "1rem"}}>Sign Up</button>
-              </fieldset>
+              <button type="submit" className="btn btn-primary" style={{marginTop: "1rem"}}>Register</button>
             </form>
           </div>
+
+          <div>
+          <p>Already have an account? Login <a href='/signin'>here</a>!</p>
+          </div>
+
           {/* <div className="col">
             <div className="text-center">
               <div className="alert alert-primary">

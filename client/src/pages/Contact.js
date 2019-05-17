@@ -1,16 +1,12 @@
 import React, { Component } from "react";
 
-const style = {
-    width: 250
-}
-
 class Contact extends Component {
     render() {
         // const { handleSubmit } = this.props;
         return (
             <div>
-                <div className="row">
-                    <form /* onSubmit={handleSubmit(this.onSubmit)} */ className="col s12">
+                <div className="row" style={{width:600}}>
+                    <form method='POST' action='send' /* onSubmit={handleSubmit(this.onSubmit)} */ className="col s12" id='contactForm'>
                         <h4>Send us a message</h4>
                         <fieldset>
                             <div className="row">
@@ -41,7 +37,7 @@ class Contact extends Component {
                                 <label for="message">Message</label>
                                 </div>
                             </div>
-                            <button type="submit" className="btn btn-primary" style={{marginTop: "1rem"}}>Sign Up</button>
+                            <button type="submit" className="btn btn-primary" style={{marginTop: "1rem"}}>Send</button>
                         </fieldset>
                     </form>
                 </div>

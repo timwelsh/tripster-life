@@ -40,7 +40,7 @@ class SignIn extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div>
+      <div style={{width:450}}>
         <h4 style={{marginBottom: "2rem"}}>Sign in</h4>
         <form onSubmit={handleSubmit(this.onSubmit)}>
           <fieldset>

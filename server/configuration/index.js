@@ -11,6 +11,10 @@ if (process.env.NODE_ENV === 'test') {
         clientSecret: 'string',
       },
     },
+    nodemailer: {
+      USER: 'admin@tripster.life',
+      PASS: 'TripsterLife1!'
+    }
   };
 } else {
   module.exports = {
@@ -25,5 +29,9 @@ if (process.env.NODE_ENV === 'test') {
         clientSecret: 'string',
       },
     },
+    nodemailer: {
+      USER: 'admin@tripster.life',
+      PASS: 'TripsterLife1!'
+    }
   };
 }

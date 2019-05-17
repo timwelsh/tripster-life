@@ -5,7 +5,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
 const nodemailer = require('nodemailer');
-const creds = require('../server/configuration');
+const creds = require('');
+const router = require("express").Router();
 
 mongoose.Promise = global.Promise;
 if (process.env.NODE_ENV === 'test') {
@@ -29,46 +30,18 @@ app.use(bodyParser.json());
 
 // Routes
 app.use('/users', require('./routes/users'));
-app.use("*", function(req, res) {
-  console.log(path.join(__dirname, "../client/build/index.html"));
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
-
+// app.use("*", function(req, res) {
+//   console.log(path.join(__dirname, "../client/build/index.html"));
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
 
 // Nodemailer
-async function mail() {
-  
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-  
-    axios({
-      method: 'POST',
-      url: 'localhost:3000/contact',
-      data: {
-        name,
-        email,
-        message
-      }
-    }).then((response) => {
-      if (response.data.msg === 'success') {
-        alert('Message sent.');
-        this.resetForm();
-      } else if (response.data.msg === 'fail') {
-        alert('Message failed to send.');
-      }
-    });
-  }
-  
-  function resetForm() {
-    document.getElementById('contactForm').reset();
-  }
+// async function mail() {
 
   // Creates a reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    host: 'tripster.life',
+    service: 'gmail',
+    host: 'smtp.gmail.com',
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
@@ -77,44 +50,49 @@ async function mail() {
     }
   });
 
-  router.post('/send', (req, res, next) => {
-    var name = req.body.name
-    var email = req.body.email
-    var message = req.body.message
-    var content = `name: ${name} \n email: ${email} \n message: ${content} `
+  app.post('/send', (req, res, next) => {
+    // const name = req.body.name
+    const email = req.body.email
+    const message = req.body.message
+    const content = `name: ${name} \n email: ${email} \n message: ${message} `
   
-    var mail = {
-      from: name,
-      to: 'RECEIVING_EMAIL_ADDRESS_GOES_HERE',  //Change to email address that you want to receive messages on
-      subject: 'New Message from Contact Form',
-      text: content
+    const mail = {
+      from: 'admin@tripstir.life',
+      to: 'ragsdale.jar@gmail.com',  //Change to email address that you want to receive messages on
+      subject: 'New Message via Tripstir',
+      html: `<p>${content}</p>`
     }
-  
+    console.log(mail);
+    console.log("Hello?");
     transporter.sendMail(mail, (err, data) => {
+      console.log("Sent?");
       if (err) {
+        console.log(err);
         res.json({
           msg: 'fail'
         })
       } else {
+        console.log("Successfully sent");
         res.json({
           msg: 'success'
         });
       }
     });
+
+    // // Send mail with defined transport object
+    // let info = await transporter.sendMail({
+    //   from: ' "Tripster Life" <admin@tripster.life> ', //sender address
+    //   to: 'admin@tripster.life, ragsdale.jar@gmail.com', // receiver's address
+    //   subject: 'Hello', // subject line
+    //   text: 'Hello, world!', // plain text body
+    //   html: '<p>Hello, world!</p>' // html body
+    // });
   });
 
-  // Send mail with defined transport object
-  let info = await transporter.sendMail({
-    from: ' "Tripster Life" <admin@tripster.life> ', //sender address
-    to: 'admin@tripster.life, ragsdale.jar@gmail.com', // receiver's address
-    subject: 'Hello', // subject line
-    text: 'Hello, world!', // plain text body
-    html: '<p>Hello, world!</p>' // html body
-  });
 
-  console.log('Message sent: %s', info.messageId);
-}
+  // console.log('Message sent: %s', info.messageId);
+// }
 
-mail().catch(console.error);
+// mail().(console.error);
 
 module.exports = app;

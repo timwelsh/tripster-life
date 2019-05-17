@@ -23,12 +23,12 @@ class Header extends Component {
     return (
       <div style={style}>
         <nav>
-          <div class="nav-wrapper">
-            <a href="/" class="brand-logo">
+          <div className="nav-wrapper">
+            <a href="/" className="brand-logo">
               <img src={Logo} style={{maxWidth:225, position:"absolute", top:-25, left:-45}}/>
             </a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
+            <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+            <ul className="right hide-on-med-and-down">
             { !this.props.isAuth ?
               [
                 <li><Link to="/signup">Sign in</Link></li>,
@@ -48,7 +48,7 @@ class Header extends Component {
           </div>
         </nav>
 
-        <ul class="sidenav" id="mobile-demo">
+        <ul className="sidenav" id="mobile-demo">
           { !this.props.isAuth ?
             [
               <li><Link to="/signout">Sign out</Link></li>,

@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'test') {
     },
     nodemailer: {
       USER: 'admin@tripster.life',
-      PASS: ''
+      PASS: 'TripsterLife1!'
     }
   };
 } else {
@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'test') {
     },
     nodemailer: {
       USER: 'admin@tripster.life',
-      PASS: ''
+      PASS: 'TripsterLife1!'
     }
   };
 }

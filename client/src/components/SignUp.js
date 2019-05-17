@@ -40,7 +40,7 @@ class SignUp extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div>
+      <div style={{width:450}}>
         <h4 style={{marginBottom: "2rem"}}>Sign up</h4>
         <div className="row">
           <form onSubmit={handleSubmit(this.onSubmit)}>

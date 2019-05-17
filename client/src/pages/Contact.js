@@ -1,15 +1,11 @@
 import React, { Component } from "react";
 
-const style = {
-    width: 250
-}
-
 class Contact extends Component {
     render() {
         // const { handleSubmit } = this.props;
         return (
             <div>
-                <div className="row">
+                <div className="row" style={{width:600}}>
                     <form method='POST' action='send' /* onSubmit={handleSubmit(this.onSubmit)} */ className="col s12" id='contactForm'>
                         <h4>Send us a message</h4>
                         <fieldset>

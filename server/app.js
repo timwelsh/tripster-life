@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
 const nodemailer = require('nodemailer');
-
+const creds = require('../server/configuration');
 
 mongoose.Promise = global.Promise;
 if (process.env.NODE_ENV === 'test') {
@@ -33,6 +33,36 @@ app.use("*", function(req, res) {
   console.log(path.join(__dirname, "../client/build/index.html"))
   res.sendFile(path.join(__dirname, "../client/build/index.html"))
 })
+
+// Nodemailer stuff
+handleSubmit(event) {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  axios({
+    method: 'POST',
+    url: 'localhost:3000/contact',
+    data: {
+      name,
+      email,
+      message
+    }
+  }).then((response) => {
+    if (response.data.msg === 'success') {
+      alert('Message sent.');
+      this.resetForm();
+    } else if (response.data.msg === 'fail') {
+      alert('Message failed to send.');
+    }
+  })
+}
+
+resetForm() {
+  document.getElementById('contactForm').reset();
+}
+
 // Nodemailer
 async function mail() {
 
@@ -42,9 +72,35 @@ async function mail() {
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: 'ragsdale.jar@gmail.com',
-      pass: 'test1234',
+      user: creds.nodemailer.USER,
+      pass: creds.nodemailer.PASS,
     }
+  });
+
+  router.post('/send', (req, res, next) => {
+    var name = req.body.name
+    var email = req.body.email
+    var message = req.body.message
+    var content = `name: ${name} \n email: ${email} \n message: ${content} `
+  
+    var mail = {
+      from: name,
+      to: 'RECEIVING_EMAIL_ADDRESS_GOES_HERE',  //Change to email address that you want to receive messages on
+      subject: 'New Message from Contact Form',
+      text: content
+    }
+  
+    transporter.sendMail(mail, (err, data) => {
+      if (err) {
+        res.json({
+          msg: 'fail'
+        })
+      } else {
+        res.json({
+          msg: 'success'
+        })
+      }
+    })
   });
 
   // Send mail with defined transport object

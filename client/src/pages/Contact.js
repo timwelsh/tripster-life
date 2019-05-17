@@ -10,7 +10,7 @@ class Contact extends Component {
         return (
             <div>
                 <div className="row">
-                    <form method='POST' action='send' /* onSubmit={handleSubmit(this.onSubmit)} */ className="col s12">
+                    <form method='POST' action='send' /* onSubmit={handleSubmit(this.onSubmit)} */ className="col s12" id='contactForm'>
                         <h4>Send us a message</h4>
                         <fieldset>
                             <div className="row">

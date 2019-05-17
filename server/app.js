@@ -30,11 +30,11 @@ app.use(bodyParser.json());
 // Routes
 app.use('/users', require('./routes/users'));
 app.use("*", function(req, res) {
-  console.log(path.join(__dirname, "../client/build/index.html"))
-  res.sendFile(path.join(__dirname, "../client/build/index.html"))
-})
+  console.log(path.join(__dirname, "../client/build/index.html"));
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
-// Nodemailer stuff
+// TODO: 
 handleSubmit(event) {
   event.preventDefault();
   const name = document.getElementById('name').value;
@@ -56,9 +56,10 @@ handleSubmit(event) {
     } else if (response.data.msg === 'fail') {
       alert('Message failed to send.');
     }
-  })
+  });
 }
 
+// TODO: 
 resetForm() {
   document.getElementById('contactForm').reset();
 }
@@ -98,9 +99,9 @@ async function mail() {
       } else {
         res.json({
           msg: 'success'
-        })
+        });
       }
-    })
+    });
   });
 
   // Send mail with defined transport object

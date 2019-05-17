@@ -6,6 +6,7 @@ const cors = require('cors');
 const path = require('path');
 const nodemailer = require('nodemailer');
 const creds = require('../server/configuration');
+const router = require('express-promise-router')();
 
 mongoose.Promise = global.Promise;
 if (process.env.NODE_ENV === 'test') {

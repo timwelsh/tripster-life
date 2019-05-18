@@ -10,3 +10,5 @@ yarn-error.log
 .idea
 .nyc_output
 .env
+/server/configuration
+/configuration

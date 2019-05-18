@@ -3,11 +3,12 @@ import Header from './Header';
 
 export default (props) => {
   return (
-    <div className="light-blue lighten-5" style={{height:"100vh"}}>
+    <div className="light-blue lighten-4" style={{height:"100vh"}}>
       <Header />
-      <div className="container">
+
+      {/* <div className="container"> */}
       { props.children }
-      </div>
+      {/* </div> */}
     </div>
   );
 };

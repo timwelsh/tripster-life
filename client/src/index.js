@@ -15,6 +15,7 @@ import About from './pages/About';
 import Benefits from './pages/Benefits';
 import Contact from './pages/Contact';
 import reducers from './reducers';
+import Home from './components/Home';
 
 import authGuard from './components/HOCs/authGuard';
 
@@ -30,7 +31,7 @@ ReactDOM.render(
   }, applyMiddleware(reduxThunk))}>
     <Router>
       <App>
-        <Route exact path="/" component={SignUp} ></Route>
+        <Route exact path="/" component={Home} ></Route>
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/dashboard" component={authGuard(Dashboard)} />

@@ -6,7 +6,7 @@ import Logo from '../utils/logo-1.png';
 import * as actions from '../actions';
 
 const style = {
-    marginBottom: "8rem"
+    zIndex:"1"
 }
 
 class Header extends Component {
@@ -23,9 +23,9 @@ class Header extends Component {
     return (
       <div style={style}>
         <nav>
-          <div class="nav-wrapper">
-            <a href="/" class="brand-logo">
-              <img src={Logo} style={{maxWidth:225, position:"absolute", top:-25, left:-45}}/>
+          <div className="nav-wrapper">
+            <a href="/" className="brand-logo">
+              <img src={Logo} style={{ maxWidth:225, position:"absolute", top:-25, left:-45, zIndex:"10"}}/>
             </a>
             <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">...</i></a>
             <ul class="right hide-on-med-and-down">

@@ -4,31 +4,18 @@ class Contact extends Component {
     render() {
         // const { handleSubmit } = this.props;
         return (
-            <div>
-                <div className="row" style={{ width:600, marginTop:"8rem" }}>
+            <div className='card hoverable' style={{ width:600, padding:20, marginTop:"8rem" }}>
+                <div className="row">
                     <form method='POST' action='send' /* onSubmit={handleSubmit(this.onSubmit)} */ className="col s12" id='contactForm'>
-                        <h4>Send us a message</h4>
-                        <fieldset>
+                        <span className='card-title'>Send us a message</span>
                             <div className="row">
                                 <div className="input-field col s6">
                                 <input id="first_name" type="text" className="validate" />
                                 <label for="first_name">First Name</label>
                                 </div>
                                 <div className="input-field col s6">
-                                <input id="last_name" type="text" className="validate" />
-                                <label for="last_name">Last Name</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col s12">
                                 <input id="email" type="email" className="validate" />
                                 <label for="email">Email</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col s12">
-                                <textarea id="subject" type="text" className="materialize-textarea" />
-                                <label for="subject">Subject</label>
                                 </div>
                             </div>
                             <div className="row">
@@ -38,7 +25,6 @@ class Contact extends Component {
                                 </div>
                             </div>
                             <button type="submit" className="btn btn-primary" style={{marginTop: "1rem"}}>Send</button>
-                        </fieldset>
                     </form>
                 </div>
             </div>

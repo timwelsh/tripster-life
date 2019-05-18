@@ -3,9 +3,9 @@ import React, { Component } from "react";
 class Benefits extends Component {
     render() {
         return (
-            <div style={{width:600}}>
-                <h4>Why use Tripster Life?</h4>
-                <h5 style={{lineHeight: "150%"}}>
+            <div className='card hoverable' style={{width:600, padding:20}}>
+                <span className='card-title'>Why use Tripster Life?</span>
+                <p className='flow-text' style={{lineHeight: "150%"}}>
                 Tripster Life is a Google Chrome extension 
                 that allows you, the travel junkie, to enter 
                 destinations for where you would like to go 
@@ -22,7 +22,7 @@ class Benefits extends Component {
                 cubicle world this a nice one minute respite from 
                 their daily work to soak in the excitement of their 
                 planned trip. 
-                </h5>
+                </p>
             </div>
         )
     }

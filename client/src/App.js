@@ -4,6 +4,7 @@ import CheckoutForm from './pages/CheckoutForm';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AUTH from './utils/AUTH';
 import Landing from './pages/Landing';
+import Dashboard from './components/Dashboard';
 import About from "./pages/About";
 import Benefits from "./pages/Benefits";
 import Contact from "./pages/Contact";
@@ -11,7 +12,6 @@ import LoginForm from './pages/Auth/LoginForm';
 import SignupForm from './pages/Auth/SignupForm';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Iframe from "react-iframe";
 
 
 class App extends Component {
@@ -91,6 +91,7 @@ class App extends Component {
             <div className="main-view">
               <Switch>
                 <Route exact path="/" component={Landing} />
+								<Route exact path='/dashboard' component={Dashboard}/>
                 <Route exact path="/about" component={About} />
                 <Route exact path="/benefits" component={Benefits} />
 								<Route exact path="/contact" component={Contact} />
@@ -105,6 +106,7 @@ class App extends Component {
 						<Header />
 						<div className="auth-wrapper" style={{paddingTop:40}}>
 							<Route exact path="/" component={() => <LoginForm login={this.login}/>} />
+							<Route exact path='/dashboard' component={Dashboard}/>
 							<Route exact path="/about" component={About} />
 							<Route exact path="/benefits" component={Benefits} />
 							<Route exact path="/contact" component={Contact} />

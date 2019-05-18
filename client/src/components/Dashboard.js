@@ -41,42 +41,33 @@ class Dashboard extends Component {
     // var collapsibleElem = document.querySelector('.collapsible');
     // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
     return (
-      <div className='row'>
-
-        {/* SIDENAV */}
-        <div className='col'>
-          <div className='sidenav'>
-            <nav>
-              <ul id="slide-out" className="sidenav">
-                <li>
-                  <div className="user-view">
-                    <div className="background">
-                    <img src="images/office.jpg" />
-                    </div>
-                    <img className="circle" src="i" />
-                    <span className="white-text name"></span>
-                    <a href="#email"><span className="white-text email">jdandturk@gmail.com</span></a>
-                  </div>
-                </li>
-                <li><a href="#!"><i className="material-icons">cloud</i>First Link With Icon</a></li>
-                <li><a href="#!">Second Link</a></li>
-                <li><div className="divider"></div></li>
-                <li><a className="subheader">Subheader</a></li>
-                <li><a className="waves-effect" href="#!">Third Link With Waves</a></li>
-              </ul>
-              <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-            </nav>
-          </div>
-        </div>
-        <br/>
+      <div className='container'>
         <div className='row'>
-
-          <div className='col'>
-            <img src=''/>
+          <div className="col s12 m6">
+            <div className="card">
+              <div className="card-image">
+                <img src='http://www.myptzone.com/assets/1/18/placeholder_male.png?9'/>
+                <span className="card-title">John Doe</span>
+              </div>
+              <div className="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div className="card-action">
+                <a href="#">Notes</a>
+                <a href="#">To-do</a>
+                <a href="#">Edit image</a>
+              </div>
+            </div>
           </div>
+          
+          <div className='col s12 m6'>
+            <div className='note'>
 
-          <div className='col'>
-            <div className='card hoverable' style={{padding:20, width:400}}>
+            </div>
+          </div>
+          <div className='col s12 m6'>
+            <div className='card' style={{padding:20, width:400}}>
               <p className='card-title'>Link your social media accounts</p>
               {/* <FacebookLogin
                 appId="171335970085090"
@@ -118,10 +109,8 @@ class Dashboard extends Component {
               </button>
             {/* <h3 style={{visibility:'hidden'}}>{this.props.secret}</h3> */}
             </div>
-
           </div>
         </div>
-        
       </div>
     );
   }

@@ -69,7 +69,7 @@ async function mail() {
   }
 
   // Creates a reusable transporter object using the default SMTP transport
-  console.log(`EMAIL: ${process.env.SENDER_EMAIL}, PASS: ${process.env.SENDER_PASS}`)
+  // console.log(`EMAIL: ${process.env.SENDER_EMAIL}, PASS: ${process.env.SENDER_PASS}`)
   let transporter = nodemailer.createTransport({
     // port: 587,
     // secure: false, // true for 465, false for other ports
@@ -88,12 +88,12 @@ async function mail() {
     var message = req.body.message
     var content = `name: ${name} \n email: ${email} \n message: ${content} `
   
-    var mail = {
-      from: name,
-      to: 'RECEIVING_EMAIL_ADDRESS_GOES_HERE',  //Change to email address that you want to receive messages on
-      subject: 'New Message from Contact Form',
-      text: content
-    }
+    // var mail = {
+    //   from: name,
+    //   to: 'RECEIVING_EMAIL_ADDRESS_GOES_HERE',  //Change to email address that you want to receive messages on
+    //   subject: 'New Message from Contact Form',
+    //   text: content
+    // }
   
     transporter.sendMail(mail, (err, data) => {
       if (err) {
@@ -112,7 +112,7 @@ async function mail() {
   let info = await transporter.sendMail({
     from: ' "Tripster Life" <admin@tripster.life> ', //sender address
     to: 'admin@tripster.life, ragsdale.jar@gmail.com', // receiver's address
-    subject: 'Hello', // subject line
+    subject: 'New Message from Tripstir', // subject line
     text: 'Hello, world!', // plain text body
     html: '<p>Hello, world!</p>' // html body
   });

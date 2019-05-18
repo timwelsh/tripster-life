@@ -45,9 +45,9 @@ class Dashboard extends Component {
 
         {/* SIDENAV */}
         <div className='col'>
-          <div className='sidenav'>
+          <div className='sidenav' style={{backgroundColor:''}}>
             <nav>
-              <ul id="slide-out" className="sidenav">
+              <ul>
                 <li>
                   <div className="user-view">
                     <div className="background">
@@ -64,7 +64,6 @@ class Dashboard extends Component {
                 <li><a className="subheader">Subheader</a></li>
                 <li><a className="waves-effect" href="#!">Third Link With Waves</a></li>
               </ul>
-              <a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
             </nav>
           </div>
         </div>

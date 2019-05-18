@@ -7,6 +7,7 @@ const path = require('path');
 const nodemailer = require('nodemailer');
 const creds = require('../server/configuration');
 const router = require('express-promise-router')();
+require('dotenv').config();
 
 mongoose.Promise = global.Promise;
 if (process.env.NODE_ENV === 'test') {
@@ -68,13 +69,16 @@ async function mail() {
   }
 
   // Creates a reusable transporter object using the default SMTP transport
+  console.log(`EMAIL: ${process.env.SENDER_EMAIL}, PASS: ${process.env.SENDER_PASS}`)
   let transporter = nodemailer.createTransport({
-    host: 'tripster.life',
-    port: 587,
-    secure: false, // true for 465, false for other ports
+    // port: 587,
+    // secure: false, // true for 465, false for other ports
+    host: 'smtp.gmail.com',
+    service: 'Gmail',
     auth: {
-      user: creds.nodemailer.USER,
-      pass: creds.nodemailer.PASS,
+      type: 'login',
+      user: 'hello.tripstir@gmail.com',
+      pass: 'sender1234',
     }
   });
 

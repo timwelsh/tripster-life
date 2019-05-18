@@ -62,10 +62,11 @@ class Dashboard extends Component {
           </div>
           
           <div className='col s12 m6'>
-            <div className='note'>
+            <div className='selectedList'>
 
             </div>
           </div>
+
           <div className='col s12 m6'>
             <div className='card' style={{padding:20, width:400}}>
               <p className='card-title'>Link your social media accounts</p>

@@ -27,11 +27,13 @@ class Header extends Component {
             <a href="/" class="brand-logo">
               <img src={Logo} style={{maxWidth:225, position:"absolute", top:-25, left:-45}}/>
             </a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">...</i></a>
             <ul class="right hide-on-med-and-down">
             { !this.props.isAuth ?
               [
-                <li><Link to="/signup">Sign in</Link></li>,
+                <li><Link to="/signin">Login</Link></li>,
+                <li><Link to="/signup">Register</Link></li>,
+                <li><Link to="/dashboard">Dashboard</Link></li>,
                 <li><Link to="/about">About</Link></li>,
                 <li><Link to="/benefits">Benefits</Link></li>,
                 <li><Link to="/contact">Contact</Link></li>,
@@ -39,7 +41,9 @@ class Header extends Component {
 
             { this.props.isAuth ?
               [
-                <li><Link to="/signout">Sign out</Link></li>,
+                <li><Link to="/signin">Login</Link></li>,
+                <li><Link to="/signup">Register</Link></li>,
+                <li><Link to="/dashboard">Dashboard</Link></li>,
                 <li><Link to="/about">About</Link></li>,
                 <li><Link to="/benefits">Benefits</Link></li>,
                 <li><Link to="/contact">Contact</Link></li>,

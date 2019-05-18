@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Benefits extends Component {
     render() {
         return (
-            <div style={{width:600}}>
+            <div style={{ width:600, marginTop:"8rem" }}>
                 <h4>Why use Tripster Life?</h4>
                 <h5 style={{lineHeight: "150%"}}>
                 Tripster Life is a Google Chrome extension 

@@ -5,7 +5,7 @@ class Contact extends Component {
         // const { handleSubmit } = this.props;
         return (
             <div>
-                <div className="row" style={{width:600}}>
+                <div className="row" style={{ width:600, marginTop:"8rem" }}>
                     <form method='POST' action='send' /* onSubmit={handleSubmit(this.onSubmit)} */ className="col s12" id='contactForm'>
                         <h4>Send us a message</h4>
                         <fieldset>

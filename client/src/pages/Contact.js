@@ -1,5 +1,36 @@
 import React, { Component } from "react";
 
+function sendEmail(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+  
+    axios({
+      method: 'POST',
+      url: '/contact',
+      data: {
+        name,
+        email,
+        message
+      }
+    }).then((response) => {
+      if (response.data.msg === 'success') {
+        alert('Message sent.');
+        this.resetForm();
+      } else if (response.data.msg === 'fail') {
+        alert('Message failed to send.');
+      }
+    });
+    mail().catch(console.error);
+    resetForm();
+}
+
+function resetForm() {
+    document.getElementById('contactForm').reset();
+}
+
+
 class Contact extends Component {
     render() {
         // const { handleSubmit } = this.props;
@@ -25,7 +56,7 @@ class Contact extends Component {
                                     <label for="message">Message</label>
                                     </div>
                                 </div>
-                                <button type="submit" className="btn btn-primary" style={{marginTop: "1rem"}}>Send</button>
+                                <button type="submit" className="btn btn-primary" onClick={sendEmail} style={{marginTop: "1rem"}}>Send</button>
                         </form>
                     </div>
                 </div>

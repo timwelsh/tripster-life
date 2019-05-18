@@ -9,7 +9,7 @@ class About extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{ marginTop:"8rem" }}>
                 <h4>Meet the Tripsters</h4>
                 <div className="row">
                     <div className="col s12 m7" style={style}>

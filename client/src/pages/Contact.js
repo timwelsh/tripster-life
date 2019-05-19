@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 function sendEmail(event) {
     event.preventDefault();
@@ -22,7 +23,7 @@ function sendEmail(event) {
         alert('Message failed to send.');
       }
     });
-    mail().catch(console.error);
+    // mail().catch(console.error);
     resetForm();
 }
 

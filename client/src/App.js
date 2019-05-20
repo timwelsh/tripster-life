@@ -21,7 +21,24 @@ class App extends Component {
     
 		this.state = {
 			loggedIn: false,
-			user: null
+			user: null,
+			tasks: [
+				{
+					id: 1,
+					title: 'renew passport',
+					completed: 'false'
+				},
+				{
+					id: 2,
+					title: 'book flights',
+					completed: 'false'
+				},
+				{
+					id: 3,
+					title: 'find petsitter',
+					completed: 'false'
+				}
+			],
     };
   }
   
@@ -70,6 +87,8 @@ class App extends Component {
 
 
 	render() {
+		console.log(this.state.tasks)
+		
 		if (this.state.complete) return <h1>Purchase Complete</h1>;
 		return (
 

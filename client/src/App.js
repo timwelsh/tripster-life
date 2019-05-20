@@ -13,7 +13,6 @@ import SignupForm from './pages/Auth/SignupForm';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-
 class App extends Component {
   
   constructor() {
@@ -69,7 +68,7 @@ class App extends Component {
 	}
 
 
-	render() {
+	render() {		
 		if (this.state.complete) return <h1>Purchase Complete</h1>;
 		return (
 

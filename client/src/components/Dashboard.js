@@ -1,12 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import GoogleLogin from 'react-google-login';
-import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+// import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 // import userImage from 
 
 import * as actions from '../actions';
 
 class Dashboard extends Component {
+
+  constructor() {
+    super();
+    
+		this.state = {
+      tasks: [
+        {
+          id: 1,
+          title: 'renew passport',
+          completed: 'false'
+        },
+        {
+          id: 2,
+          title: 'book flights',
+          completed: 'false'
+        },
+        {
+          id: 3,
+          title: 'find petsitter',
+          completed: 'false'
+        }
+      ]
+    };
+  }
+
   async componentDidMount() {
     this.props.getDashboard()
   }
@@ -43,73 +68,87 @@ class Dashboard extends Component {
     return (
       <div className='container'>
         <div className='row'>
-          <div className="col s12 m6">
-            <div className="card">
+          <div className="col s12 m4">
+            <div className="card" style={{width:300}}>
               <div className="card-image">
                 <img src='http://www.myptzone.com/assets/1/18/placeholder_male.png?9'/>
                 <span className="card-title">John Doe</span>
               </div>
               <div className="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
+                <p>My goal is to sip coffee in every country!</p>
               </div>
               <div className="card-action">
-                <a href="#">Notes</a>
-                <a href="#">To-do</a>
-                <a href="#">Edit image</a>
+                {/* On click, pull up modal to update */}
+                <a href="#">Edit</a>
+                {/* On click, pull up modal to delete */}
+                <a href="#">Delete</a>
+                <a href="#"></a>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col'>
+                <div className='card' style={{padding:20, width:300}}>
+                  <p className='content'>Link your social media accounts</p>
+                  {/* <FacebookLogin
+                    appId="171335970085090"
+                    disabled={true}
+                    render={renderProps => (
+                      <button style={{ marginRight: 15 }} className="btn btn-primary" onClick={renderProps.onClick} disabled={this.props.dashboard.methods.includes('facebook') ? true : false}>Link with Facebook</button>
+                    )}
+                    fields="name,email,picture"
+                    callback={this.linkFacebook}
+                    cssClass="btn btn-outline-primary"
+                  /> */}
+                  <GoogleLogin 
+                    clientId="499420307488-hj9l9h3amt5into76m9i0ntkaqcg9q4t.apps.googleusercontent.com"
+                    disabled={this.props.dashboard.methods.includes('google') ? true : false}
+                    render={renderProps => (
+                      <button className="btn btn-danger" onClick={renderProps.onClick} disabled={renderProps.disabled}>Link with Google</button>
+                    )}
+                    onSuccess={this.linkGoogle}
+                    onFailure={this.linkGoogle}
+                  />
+                  <br />
+                  <br />
+                  <br />
+                  <p className='content'>Unlink your social media accounts</p>
+                  {/* <button 
+                    style={{ marginRight: 15 }} 
+                    className="btn btn-primary" 
+                    onClick={ () => this.unlinkFacebook() } 
+                    disabled={ this.props.dashboard.methods.includes('facebook') ? false : true }
+                  >
+                    Unlink with Facebook
+                  </button> */}
+                  <button 
+                    className="btn btn-danger" 
+                    onClick={ () => this.unlinkGoogle() }
+                    disabled={ this.props.dashboard.methods.includes('google') ? false : true }
+                  >
+                    Unlink with Google
+                  </button>
+                {/* <h3 style={{visibility:'hidden'}}>{this.props.secret}</h3> */}
+                </div>
               </div>
             </div>
           </div>
           
-          <div className='col s12 m6'>
-            <div className='selectedList'>
-
+          <div className='col s12 m8 l8'>
+            <div className='lists'>
+              <div className='todo card col offset-s2 hoverable' style={{backgroundColor:'#fff'}}>
+                <p className='card-title'>Tasks</p>
+                <div className='listContent'> 
+                {this.state.tasks.map(task => {
+                  return (
+                    <div {...task}> 
+                      <p>{ task.title }</p>
+                    </div>
+                  )
+                })}
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div className='col s12 m6'>
-            <div className='card' style={{padding:20, width:400}}>
-              <p className='card-title'>Link your social media accounts</p>
-              {/* <FacebookLogin
-                appId="171335970085090"
-                disabled={true}
-                render={renderProps => (
-                  <button style={{ marginRight: 15 }} className="btn btn-primary" onClick={renderProps.onClick} disabled={this.props.dashboard.methods.includes('facebook') ? true : false}>Link with Facebook</button>
-                )}
-                fields="name,email,picture"
-                callback={this.linkFacebook}
-                cssClass="btn btn-outline-primary"
-              /> */}
-              <GoogleLogin 
-                clientId="499420307488-hj9l9h3amt5into76m9i0ntkaqcg9q4t.apps.googleusercontent.com"
-                disabled={this.props.dashboard.methods.includes('google') ? true : false}
-                render={renderProps => (
-                  <button className="btn btn-danger" onClick={renderProps.onClick} disabled={renderProps.disabled}>Link with Google</button>
-                )}
-                onSuccess={this.linkGoogle}
-                onFailure={this.linkGoogle}
-              />
-              <br />
-              <br />
-              <br />
-              <p className='card-title'>Unlink your social media accounts</p>
-              {/* <button 
-                style={{ marginRight: 15 }} 
-                className="btn btn-primary" 
-                onClick={ () => this.unlinkFacebook() } 
-                disabled={ this.props.dashboard.methods.includes('facebook') ? false : true }
-              >
-                Unlink with Facebook
-              </button> */}
-              <button 
-                className="btn btn-danger" 
-                onClick={ () => this.unlinkGoogle() }
-                disabled={ this.props.dashboard.methods.includes('google') ? false : true }
-              >
-                Unlink with Google
-              </button>
-            {/* <h3 style={{visibility:'hidden'}}>{this.props.secret}</h3> */}
-            </div>
           </div>
         </div>
       </div>

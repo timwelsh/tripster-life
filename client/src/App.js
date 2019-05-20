@@ -13,7 +13,6 @@ import SignupForm from './pages/Auth/SignupForm';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-
 class App extends Component {
   
   constructor() {
@@ -21,24 +20,7 @@ class App extends Component {
     
 		this.state = {
 			loggedIn: false,
-			user: null,
-			tasks: [
-				{
-					id: 1,
-					title: 'renew passport',
-					completed: 'false'
-				},
-				{
-					id: 2,
-					title: 'book flights',
-					completed: 'false'
-				},
-				{
-					id: 3,
-					title: 'find petsitter',
-					completed: 'false'
-				}
-			],
+			user: null
     };
   }
   
@@ -86,9 +68,7 @@ class App extends Component {
 	}
 
 
-	render() {
-		console.log(this.state.tasks)
-		
+	render() {		
 		if (this.state.complete) return <h1>Purchase Complete</h1>;
 		return (
 

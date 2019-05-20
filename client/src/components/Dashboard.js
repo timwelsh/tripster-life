@@ -1,13 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import GoogleLogin from 'react-google-login';
-import Task from '../components/Task';
 // import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 // import userImage from 
 
 import * as actions from '../actions';
 
 class Dashboard extends Component {
+
+  constructor() {
+    super();
+    
+		this.state = {
+      tasks: [
+        {
+          id: 1,
+          title: 'renew passport',
+          completed: 'false'
+        },
+        {
+          id: 2,
+          title: 'book flights',
+          completed: 'false'
+        },
+        {
+          id: 3,
+          title: 'find petsitter',
+          completed: 'false'
+        }
+      ]
+    };
+  }
+
   async componentDidMount() {
     this.props.getDashboard()
   }
@@ -51,7 +75,7 @@ class Dashboard extends Component {
                 <span className="card-title">John Doe</span>
               </div>
               <div className="card-content">
-                <p>I'm a hardcore tripster! My goal is to travel to every country in the world!</p>
+                <p>My goal is to sip coffee in every country!</p>
               </div>
               <div className="card-action">
                 {/* On click, pull up modal to update */}
@@ -110,17 +134,17 @@ class Dashboard extends Component {
           </div>
           
           <div className='col s12 m8 l8'>
-            <div className='lists card' style={{backgroundColor:'#fff'}}>
-              <div className='notes col s4'>
-                <p className='card-title'>Notes</p>
-                <div className='listContent'>
-
-                </div>
-              </div>
-              <div className='todo col s4 offset-s4'>
+            <div className='lists'>
+              <div className='todo card col offset-s2 hoverable' style={{backgroundColor:'#fff'}}>
                 <p className='card-title'>Tasks</p>
-                <div className='listContent'>
-                  <Task task={this.state.task}/>
+                <div className='listContent'> 
+                {this.state.tasks.map(task => {
+                  return (
+                    <div {...task}> 
+                      <p>{ task.title }</p>
+                    </div>
+                  )
+                })}
                 </div>
               </div>
             </div>

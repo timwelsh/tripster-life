@@ -67,9 +67,9 @@ class Dashboard extends Component {
     // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
     return (
       <div className='container'>
-        <div className='row'>
+        <div className='row' style={{marginTop:'4rem'}}>
           <div className="col s12 m4">
-            <div className="card" style={{width:300}}>
+            <div className="card hoverable" style={{width:300}}>
               <div className="card-image">
                 <img src='http://www.myptzone.com/assets/1/18/placeholder_male.png?9'/>
                 <span className="card-title">John Doe</span>
@@ -87,7 +87,7 @@ class Dashboard extends Component {
             </div>
             <div className='row'>
               <div className='col'>
-                <div className='card' style={{padding:20, width:300}}>
+                <div className='card hoverable' style={{padding:20, width:300}}>
                   <p className='content'>Link your social media accounts</p>
                   {/* <FacebookLogin
                     appId="171335970085090"
@@ -133,22 +133,27 @@ class Dashboard extends Component {
             </div>
           </div>
           
-          <div className='col s12 m8 l8'>
-            <div className='lists'>
-              <div className='todo card col offset-s2 hoverable' style={{backgroundColor:'#fff'}}>
-                <p className='card-title'>Tasks</p>
-                <div className='listContent'> 
-                {this.state.tasks.map(task => {
-                  return (
-                    <div {...task}> 
-                      <p>{ task.title }</p>
-                    </div>
-                  )
-                })}
-                </div>
+          <div className='col s8 todo card hoverable' style={{backgroundColor:'#fff'}}>
+            <div style={{margin:15}}>
+              <p className='card-title'>Tasks</p>
+              <div className='listContent'>
+                <form action='#'>
+                  {this.state.tasks.map(task => {
+                    return (
+                      <div {...task}> 
+                        <label>
+                          <input type='checkbox' />
+                          <span>{ task.title }</span>
+                        </label>
+                      </div>
+                    )
+                  })}
+                </form>
               </div>
             </div>
-
+            <div style={{float:'right', margin:15}}>
+              <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            </div>
           </div>
         </div>
       </div>

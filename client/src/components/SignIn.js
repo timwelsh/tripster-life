@@ -40,60 +40,63 @@ class SignIn extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div className='card hoverable ' style={{ width:450, padding:20, marginTop:"8rem" }}>
-        <span className='card-title'>Login</span>
-        <form onSubmit={handleSubmit(this.onSubmit)}>
-          <div>
-            <Field
-              name='email'
-              type='text'
-              id='email'
-              label='Email'
-              component={ CustomInput } />
-            <Field
-              name='password'
-              type='password'
-              id='password'
-              label='Password'
-              component={ CustomInput } />
+      <div className='container'>
+        <div className='card hoverable ' style={{ width:450, padding:20, margin:'0 auto', marginTop:"8rem" }}>
+          <span className='card-title'>Login</span>
+          <form onSubmit={handleSubmit(this.onSubmit)}>
+            <div>
+              <Field
+                name='email'
+                type='text'
+                id='email'
+                label='Email'
+                component={ CustomInput } />
+              <Field
+                name='password'
+                type='password'
+                id='password'
+                label='Password'
+                component={ CustomInput } />
 
-          { this.props.errorMessage ? 
-          <div className='alert alert-danger'>
-            { this.props.errorMessage }
-          </div> : null }
+            { this.props.errorMessage ? 
+            <div className='alert alert-danger'>
+              { this.props.errorMessage }
+            </div> : null }
 
-          <button type='submit' className='btn btn-primary'>Login</button>
-          </div>
-        </form>
-
-        <div>
-          <p>Don't have an account yet? Sign up for one <a href='/signup'>here</a>!</p>
-        </div>
-        {/* <div className='col'>
-          <div className='text-center'>
-            <div className='alert alert-primary'>
-              Or sign in using third-party services
+            <button type='submit' className='btn btn-primary'>Login</button>
             </div>
-            <FacebookLogin
-              appId='string'
-              render={renderProps => (
-                <button style={{ marginRight: 15 }} className='btn btn-primary' onClick={renderProps.onClick}>Facebook</button>
-              )}
-              fields='name,email,picture'
-              callback={this.responseFacebook}
-              cssClass='btn btn-outline-primary'
-            />
-            <GoogleLogin 
-              clientId='string'
-              render={renderProps => (
-                <button className='btn btn-danger' onClick={renderProps.onClick} disabled={renderProps.disabled}>Google</button>
-              )}
-              onSuccess={this.responseGoogle}
-              onFailure={this.responseGoogle}
-              className='btn btn-outline-danger'
-            />
+          </form>
+
+          <div>
+            <p>Don't have an account yet? Sign up for one <a href='/signup'>here</a>!</p>
           </div>
-        </div> */}
+          {/* <div className='col'>
+            <div className='text-center'>
+              <div className='alert alert-primary'>
+                Or sign in using third-party services
+              </div>
+              <FacebookLogin
+                appId='string'
+                render={renderProps => (
+                  <button style={{ marginRight: 15 }} className='btn btn-primary' onClick={renderProps.onClick}>Facebook</button>
+                )}
+                fields='name,email,picture'
+                callback={this.responseFacebook}
+                cssClass='btn btn-outline-primary'
+              />
+              <GoogleLogin 
+                clientId='string'
+                render={renderProps => (
+                  <button className='btn btn-danger' onClick={renderProps.onClick} disabled={renderProps.disabled}>Google</button>
+                )}
+                onSuccess={this.responseGoogle}
+                onFailure={this.responseGoogle}
+                className='btn btn-outline-danger'
+              />
+            </div>
+          </div> */}
+        </div>
+
       </div>
     );
   }

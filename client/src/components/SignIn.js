@@ -49,13 +49,13 @@ class SignIn extends Component {
                 name='email'
                 type='text'
                 id='email'
-                label='Email'
+                placeholder='Email'
                 component={ CustomInput } />
               <Field
                 name='password'
                 type='password'
                 id='password'
-                label='Password'
+                placeholder='Password'
                 component={ CustomInput } />
 
             { this.props.errorMessage ? 

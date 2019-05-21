@@ -49,29 +49,25 @@ class SignUp extends Component {
                 name="firstName"
                 type="text"
                 id="firstName"
-                label="First Name"
-                placeholder="John"
+                placeholder="First Name"
                 component={ CustomInput } />
               <Field
                 name="lastName"
                 type="text"
                 id="lastName"
-                label='Last Name'
-                placeholder="Doe"
+                placeholder="Last Name"
                 component={ CustomInput } />
                 <Field
                   name="email"
                   type="text"
                   id="email"
-                  label='Email'
-                  placeholder="hello@example.com"
+                  placeholder="Email"
                   component={ CustomInput } />
                 <Field
                   name="password"
                   type="password"
                   id="password"
-                  label='Password'
-                  placeholder="* * * * * *"
+                  placeholder="Password"
                   component={ CustomInput } />
                   <Field
                   name="birthday"

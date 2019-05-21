@@ -32,9 +32,12 @@ class Footer extends Component {
                             </div>
                         </div>
                     </div>
-                    <div>
-
-                    </div>
+                    {/* <div class="footer-copyright">
+                        <div class="container">
+                        © 2019 Copyright
+                        <a class="grey-text text-lighten-4 right" href="#!"></a>
+                        </div>
+                    </div> */}
                 </div>
             </div>
         )

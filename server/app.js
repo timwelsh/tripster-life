@@ -28,5 +28,10 @@ app.use(bodyParser.json());
 
 // Routes
 app.use('/users', require('./routes/users'));
+app.use("*", function(req, res) {
+  console.log(path.join(__dirname, "../client/build/index.html"));
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
+
 
 module.exports = app;

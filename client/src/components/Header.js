@@ -66,7 +66,7 @@ class Header extends Component {
                 <li key="deashboard">
                   <Link to="/dashboard">Dashboard</Link>
                 </li>,
-                <li className="nav-item">
+                <li key="signout">
                     <Link to="/" onClick={this.signOut}>Sign Out</Link>
                 </li>] : null }
             </ul>

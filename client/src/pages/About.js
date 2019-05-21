@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import tim from "../utils/tim.png";
+import React, { Component } from 'react';
+import tim from '../utils/tim.png';
 
 // const style = {
 //     width: "33%"

@@ -62,11 +62,9 @@ class SignIn extends Component {
             <div className='alert alert-danger'>
               { this.props.errorMessage }
             </div> : null }
-
             <button type='submit' className='btn btn-primary'>Login</button>
             </div>
           </form>
-
           <div>
             <p>Don't have an account yet? Sign up for one <a href='/signup'>here</a>!</p>
           </div>

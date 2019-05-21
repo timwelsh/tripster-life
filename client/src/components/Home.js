@@ -5,7 +5,7 @@ export default () => {
     <div>
       <div
         style={{ 
-          backgroundImage:'url(https://resources.stuff.co.nz/content/dam/images/1/l/j/k/a/a/image.related.StuffLandscapeSixteenByNine.1240x700.1ljk53.png/1505425522468.jpg)',        
+          backgroundImage:'url(https://live.staticflickr.com/2399/2213593304_9cb6614dc5_o.jpg)',        
           backgroundRepeat:'noRepeat',
           position:'absolute', 
           backgroundSize:'cover',
@@ -16,7 +16,7 @@ export default () => {
       >
       </div>
       <div className='container' style={{position:'absolute', left:'50vw', top:'50vh'}}>
-        <a className='waves-effect waves-light btn-large red lighten-1' href='https://chrome.google.com/webstore/detail/tripster-life/gpfimpmniemnalhhoomaocokfblbmcjo' target='_blank'><i className='material-icons left'>flight_takeoff</i>Add Tripster to Chrome</a>
+        <a className='waves-effect waves-light btn-large red lighten-1' style={{width:350, height:75, borderRadius:25}} href='https://chrome.google.com/webstore/detail/tripster-life/gpfimpmniemnalhhoomaocokfblbmcjo' target='_blank'><i className='material-icons left'>flight_takeoff</i>Add Tripster to Chrome</a>
       </div>
     </div>
   );

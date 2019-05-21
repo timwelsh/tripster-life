@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import Footer from './Footer';
 
 export default (props) => {
   return (
@@ -9,6 +10,8 @@ export default (props) => {
       {/* <div className='container'> */}
       { props.children }
       {/* </div> */}
+
+      <Footer />
     </div>
   );
 };

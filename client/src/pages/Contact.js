@@ -30,7 +30,7 @@ class Contact extends Component {
         // const { handleSubmit } = this.props;
         return (
             <div className='container'>
-                <div className='card hoverable' style={{ width:600, padding:20, marginTop:"8rem" }}>
+                <div className='card hoverable' style={{ width:600, padding:20, margin:'0 auto', marginTop:"8rem" }}>
                     <div className="row">
                         <form method='POST' action='send' /* onSubmit={handleSubmit(this.onSubmit)} */ className="col s12" id='contactForm'>
                             <span className='card-title'>Send us a message</span>
@@ -39,12 +39,12 @@ class Contact extends Component {
                                     <input placeholder="Name" id="name" type="text" className="validate" />
                                     </div>
                                     <div className="input-field col s6">
-                                    <input id="email" type="email" className="validate" />
+                                    <input placeholder='Email' id="email" type="email" className="validate" />
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="input-field col s12">
-                                    <textarea id="message" type="text" className="materialize-textarea" />
+                                    <textarea placeholder='Message' id="message" type="text" className="materialize-textarea" />
                                     </div>
                                 </div>
                                 <button type="submit" className="btn btn-primary" onClick={this.sendEmail} style={{marginTop: "1rem"}}>Send</button>

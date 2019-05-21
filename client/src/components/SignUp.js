@@ -41,42 +41,61 @@ class SignUp extends Component {
     const { handleSubmit } = this.props;
     return (
       <div className="container">
-        <div className="row">
+        <div className='card hoverable' style={{ width:450, padding:20, margin:'0 auto', marginTop:"8rem" }}>
+        <span className='card-title'>Register</span>
           <div className="col">
             <form onSubmit={handleSubmit(this.onSubmit)}>
-              <fieldset>
+              <Field
+                name="firstName"
+                type="text"
+                id="firstName"
+                label="First Name"
+                placeholder="John"
+                component={ CustomInput } />
+              <Field
+                name="lastName"
+                type="text"
+                id="lastName"
+                label='Last Name'
+                placeholder="Doe"
+                component={ CustomInput } />
                 <Field
                   name="email"
                   type="text"
                   id="email"
-                  label="Enter your email"
-                  placeholder="example@example.com"
+                  label='Email'
+                  placeholder="hello@example.com"
                   component={ CustomInput } />
-              </fieldset>
-              <fieldset>
                 <Field
                   name="password"
                   type="password"
                   id="password"
-                  label="Enter your password"
-                  placeholder="yoursuperpassword"
+                  label='Password'
+                  placeholder="* * * * * *"
                   component={ CustomInput } />
-              </fieldset>
-
+                  <Field
+                  name="birthday"
+                  type="date"
+                  id="birthday"
+                  label='Birthday'
+                  placeholder="Birthday"
+                  component={ CustomInput } />
               { this.props.errorMessage ? 
               <div className="alert alert-danger">
                 { this.props.errorMessage }
               </div> : null }
-
+              <br></br>
               <button type="submit" className="btn btn-primary">Sign Up</button>
             </form>
           </div>
+          <br></br>
           <div className="col">
             <div className="text-center">
               <div className="alert alert-primary">
                 Or sign up using third-party services
               </div>
-              <FacebookLogin
+              <br></br>
+              {/* <FacebookLogin
                 appId="number"
                 render={renderProps => (
                   <button style={{ marginRight: 15 }} className="btn btn-primary" onClick={renderProps.onClick}>Facebook</button>
@@ -84,7 +103,7 @@ class SignUp extends Component {
                 fields="name,email,picture"
                 callback={this.responseFacebook}
                 cssClass="btn btn-outline-primary"
-              />
+              /> */}
               <GoogleLogin 
                 clientId="number"
                 render={renderProps => (

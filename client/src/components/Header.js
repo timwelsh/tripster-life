@@ -6,7 +6,7 @@ import Logo from '../utils/logo-1.png';
 import * as actions from '../actions';
 
 const style = {
-    zIndex:"1"
+  zIndex:"1"
 }
 
 class Header extends Component {
@@ -22,55 +22,56 @@ class Header extends Component {
   render() {
     return (
       <div style={style}>
-        <nav>
-          <div className="nav-wrapper">
-            <a href="/" className="brand-logo">
-              <img src={Logo} style={{ maxWidth:225, position:"absolute", top:-25, left:-45, zIndex:"10"}}/>
-            </a>
-            <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">...</i></a>
-            <ul class="right hide-on-med-and-down">
-            { !this.props.isAuth ?
-              [
-                <li><Link to="/signin">Login</Link></li>,
-                <li><Link to="/signup">Register</Link></li>,
-                <li><Link to="/dashboard">Dashboard</Link></li>,
-                <li><Link to="/about">About</Link></li>,
-                <li><Link to="/benefits">Benefits</Link></li>,
-                <li><Link to="/contact">Contact</Link></li>,
-                ] : null }
+          <nav>
+            {/* <Link className="navbar-brand" to="/">Tripster Life</Link> */}
+            <div className="nav-wrapper cyan accent-4">
+              <a href="/" className="brand-logo">
+                <img src={Logo} style={{ maxWidth:225, position:"absolute", top:-15, left:-45, zIndex:"10"}}/>
+              </a>
 
-            { this.props.isAuth ?
-              [
-                <li><Link to="/signin">Login</Link></li>,
-                <li><Link to="/signup">Register</Link></li>,
-                <li><Link to="/dashboard">Dashboard</Link></li>,
-                <li><Link to="/about">About</Link></li>,
-                <li><Link to="/benefits">Benefits</Link></li>,
-                <li><Link to="/contact">Contact</Link></li>,
-                ] : null }
+              {/* <ul className="left">
+                <li key="dashboard">
+                  <Link to="/dashboard">Welcome Profile Dashboard</Link>
+                </li>
+              </ul> */}
+
+            <ul className="right hide-on-med-and-down">
+              { !this.props.isAuth ?
+                [<li key="about">
+                  <Link to="/about">About</Link>
+                </li>, 
+                <li key="benefits">
+                  <Link to="/benefits">Benefits</Link>
+                </li>,
+                <li key="contact">
+                  <Link to="/contact">Contact</Link>
+                </li>,
+                <li key="signup">
+                  <Link to="/signup">Register</Link>
+                </li>,
+                <li key="signin">
+                  <Link to="/signin">Login</Link>
+                </li>] : null }
+              
+              { this.props.isAuth ?
+                [<li key="about">
+                  <Link to="/about">About</Link>
+                </li>, 
+                <li key="benefits">
+                  <Link to="/benefits">Benefits</Link>
+                </li>,
+                <li key="contact">
+                  <Link to="/contact">Contact</Link>
+                </li>,
+                <li key="deashboard">
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>,
+                <li className="nav-item">
+                    <Link to="/" onClick={this.signOut}>Sign Out</Link>
+                </li>] : null }
             </ul>
           </div>
         </nav>
-
-        <ul class="sidenav" id="mobile-demo">
-          { !this.props.isAuth ?
-            [
-              <li><Link to="/signout">Sign out</Link></li>,
-              <li><Link to="/about">About</Link></li>,
-              <li><Link to="/benefits">Benefits</Link></li>,
-              <li><Link to="/contact">Contact</Link></li>,
-            ] : null 
-          }
-
-          { this.props.isAuth ?
-            [
-              <li><Link to="/signout">Sign out</Link></li>,
-              <li><Link to="/about">About</Link></li>,
-              <li><Link to="/benefits">Benefits</Link></li>,
-              <li><Link to="/contact">Contact</Link></li>,
-            ] : null 
-          }
-        </ul>
       </div>
     );
   }
@@ -83,3 +84,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, actions)(Header);
+
+

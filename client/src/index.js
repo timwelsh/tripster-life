@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reduxThunk from 'redux-thunk';
@@ -8,6 +8,7 @@ import axios from 'axios';
 
 import registerServiceWorker from './registerServiceWorker';
 import App from './components/App';
+import Home from './components/Home';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import Dashboard from './components/Dashboard';
@@ -15,23 +16,21 @@ import About from './pages/About';
 import Benefits from './pages/Benefits';
 import Contact from './pages/Contact';
 import reducers from './reducers';
-import Home from './components/Home';
 
 import authGuard from './components/HOCs/authGuard';
 
-const jwtToken = localStorage.getItem('JWT_TOKEN');
-axios.defaults.headers.common['Authorization'] = jwtToken;
+axios.defaults.withCredentials = true;
+
+/*
+  1) Disable the httpOnly property :(
+  2) Fire off a request on app load to the BE which will check if the user is auth-ed
+*/
 
 ReactDOM.render(
-  <Provider store={createStore(reducers, {
-    auth: {
-      token: jwtToken,
-      isAuthenticated: jwtToken ? true : false
-    }
-  }, applyMiddleware(reduxThunk))}>
-    <Router>
+  <Provider store={createStore(reducers, {}, applyMiddleware(reduxThunk))}>
+    <BrowserRouter>
       <App>
-        <Route exact path="/" component={Home} ></Route>
+        <Route exact path="/" component={Home} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/dashboard" component={authGuard(Dashboard)} />
@@ -39,7 +38,7 @@ ReactDOM.render(
         <Route exact path="/benefits" component={Benefits} ></Route>
         <Route exact path="/contact" component={Contact} ></Route>
       </App>
-    </Router>
+    </BrowserRouter>
   </Provider>, 
   document.querySelector('#root'));
 registerServiceWorker();

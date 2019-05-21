@@ -3,7 +3,7 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import GoogleLogin from 'react-google-login';
-// import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
 import * as actions from '../actions';
 import CustomInput from './CustomInput';
@@ -13,7 +13,7 @@ class SignUp extends Component {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
     this.responseGoogle = this.responseGoogle.bind(this);
-    // this.responseFacebook = this.responseFacebook.bind(this);
+    this.responseFacebook = this.responseFacebook.bind(this);
   }
 
   async onSubmit(formData) {
@@ -40,74 +40,53 @@ class SignUp extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div className='card hoverable ' style={{ width:450, padding:20, marginTop:"8rem" }}>
-        <span className='card-title'>Register</span>
+      <div className="container">
         <div className="row">
-          <form onSubmit={handleSubmit(this.onSubmit)}>
-              <div className="row">
-                <Field
-                  name="firstName"
-                  type="text"
-                  id="firstName"
-                  label="First Name"
-                  component={ CustomInput } />
-                <Field
-                  name="lastName"
-                  type="text"
-                  id="lastName"
-                  label="Last Name"
-                  component={ CustomInput } />
-              </div>
-              <div className="row">
+          <div className="col">
+            <form onSubmit={handleSubmit(this.onSubmit)}>
+              <fieldset>
                 <Field
                   name="email"
                   type="text"
                   id="email"
-                  label="Email"
+                  label="Enter your email"
+                  placeholder="example@example.com"
                   component={ CustomInput } />
+              </fieldset>
+              <fieldset>
                 <Field
                   name="password"
                   type="password"
                   id="password"
-                  label="Password"
+                  label="Enter your password"
+                  placeholder="yoursuperpassword"
                   component={ CustomInput } />
-              </div>
-              {/* <input 
-                name="birthday"
-                type="text" 
-                id="birthday"
-                label="Birthday"
-                class="datepicker" /> */}
+              </fieldset>
 
               { this.props.errorMessage ? 
               <div className="alert alert-danger">
                 { this.props.errorMessage }
               </div> : null }
 
-              <button type="submit" className="btn btn-primary" style={{marginTop: "1rem"}}>Register</button>
+              <button type="submit" className="btn btn-primary">Sign Up</button>
             </form>
           </div>
-
-          <div>
-          <p>Already have an account? Login <a href='/signin'>here</a>!</p>
-          </div>
-
           <div className="col">
             <div className="text-center">
               <div className="alert alert-primary">
                 Or sign up using third-party services
               </div>
-              {/* <FacebookLogin
-                appId="string"
+              <FacebookLogin
+                appId="number"
                 render={renderProps => (
                   <button style={{ marginRight: 15 }} className="btn btn-primary" onClick={renderProps.onClick}>Facebook</button>
                 )}
                 fields="name,email,picture"
                 callback={this.responseFacebook}
                 cssClass="btn btn-outline-primary"
-              /> */}
+              />
               <GoogleLogin 
-                clientId="string"
+                clientId="number"
                 render={renderProps => (
                   <button className="btn btn-danger" onClick={renderProps.onClick} disabled={renderProps.disabled}>Google</button>
                 )}
@@ -118,6 +97,7 @@ class SignUp extends Component {
             </div>
           </div>
         </div>
+      </div>
     );
   }
 }

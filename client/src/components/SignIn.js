@@ -40,7 +40,7 @@ class SignIn extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div className='card hoverable ' style={{ width:450, padding:20, marginTop:"8rem" }}>
+      <div className='card hoverable' style={{ width:450, padding:20, marginTop:"8rem" }}>
         <span className='card-title'>Login</span>
         <form onSubmit={handleSubmit(this.onSubmit)}>
           <div>

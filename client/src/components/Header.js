@@ -26,7 +26,7 @@ class Header extends Component {
             {/* <Link className="navbar-brand" to="/">Tripster Life</Link> */}
             <div className="nav-wrapper light-blue darken-1">
               <a href="/" className="brand-logo">
-                <img src={Logo} style={{ maxWidth:250, position:"absolute", top:-15, left:-45, zIndex:"10"}}/>
+                <img src={Logo} style={{ maxWidth:250, position:"absolute", top:-15, left:-45, zIndex:"100"}}/>
               </a>
 
               {/* <ul className="left">

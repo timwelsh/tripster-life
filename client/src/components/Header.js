@@ -40,8 +40,8 @@ class Header extends Component {
                 [<li key="about">
                   <Link to="/about">About</Link>
                 </li>, 
-                <li key="benefits">
-                  <Link to="/benefits">Benefits</Link>
+                <li key="features">
+                  <Link to="/features">Features</Link>
                 </li>,
                 <li key="contact">
                   <Link to="/contact">Contact</Link>
@@ -57,8 +57,8 @@ class Header extends Component {
                 [<li key="about">
                   <Link to="/about">About</Link>
                 </li>, 
-                <li key="benefits">
-                  <Link to="/benefits">Benefits</Link>
+                <li key="features">
+                  <Link to="/features">Features</Link>
                 </li>,
                 <li key="contact">
                   <Link to="/contact">Contact</Link>

@@ -13,7 +13,7 @@ import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import Dashboard from './components/Dashboard';
 import About from './pages/About';
-import Benefits from './pages/Benefits';
+import Features from './pages/Features';
 import Contact from './pages/Contact';
 import reducers from './reducers';
 
@@ -35,7 +35,7 @@ ReactDOM.render(
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/dashboard" component={authGuard(Dashboard)} />
         <Route exact path="/about" component={About} ></Route>
-        <Route exact path="/benefits" component={Benefits} ></Route>
+        <Route exact path="/features" component={Features} ></Route>
         <Route exact path="/contact" component={Contact} ></Route>
       </App>
     </BrowserRouter>

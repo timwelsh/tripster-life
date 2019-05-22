@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Benefits extends Component {
+class Features extends Component {
     render() {
         return (
             <div className='container'>
@@ -30,4 +30,4 @@ class Benefits extends Component {
     }
 }
 
-export default Benefits;
+export default Features;

@@ -10,8 +10,10 @@ export default () => {
           position:'absolute', 
           backgroundSize:'cover',
           marginTop:0, 
-          height:'95vh', 
-          width:'100vw',
+          height:'100%', 
+          width:'100%',
+          overflow:'hidden',
+          opacity:'0.65',
         }} 
       >
       </div>

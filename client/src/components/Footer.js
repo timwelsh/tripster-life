@@ -22,7 +22,7 @@ class Footer extends Component {
                         </div>
                         <div className='row' style={{marginTop:0}}>
                             <div className='col'>
-                                <p><a href='https://github.com/timwelsh' style={{color:'#fff'}}><i class="fab fa-github"></i> Tim Welsh</a></p>
+                                <p><a href='https://github.com/timwelsh' style={{color:'#fff'}}><i className="fab fa-github"></i> Tim Welsh</a></p>
                                 <p><a href='https://github.com/ericksont11' style={{color:'#fff'}}>Tom Erickson</a></p>
                             </div>
 
@@ -32,10 +32,10 @@ class Footer extends Component {
                             </div>
                         </div>
                     </div>
-                    {/* <div class="footer-copyright">
-                        <div class="container">
+                    {/* <div className="footer-copyright">
+                        <div className="container">
                         © 2019 Copyright
-                        <a class="grey-text text-lighten-4 right" href="#!"></a>
+                        <a className="grey-text text-lighten-4 right" href="#!"></a>
                         </div>
                     </div> */}
                 </div>

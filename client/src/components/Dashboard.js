@@ -152,7 +152,7 @@ class Dashboard extends Component {
               </div>
             </div>
             <div style={{float:'right', margin:15}}>
-              <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+              <a className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">add</i></a>
             </div>
           </div>
         </div>

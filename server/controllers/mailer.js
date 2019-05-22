@@ -30,12 +30,11 @@ module.exports = {
           from: email, //sender address
           to: 'admin@tripster.life, ragsdale.jar@gmail.com', // receiver's address
           subject: 'New Message from Tripstir', // subject line
-          text: content, // plain text body
-          // html: '<p>Hello, world!</p>' // html body
+          text: content // plain text body
         }
         
         transporter.sendMail(mail, (err, data) => {
-          if (err) {
+          if (err) {   
             res.json({
               msg: 'fail'
             })

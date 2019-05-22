@@ -35,6 +35,7 @@ app.use(express.static(path.join(__dirname, "../client/build/")));
 app.use('/users', require('./routes/users'));
 app.use('/mail', require('./routes/mailer'));
 
+
 app.use("*", function(req, res) {
   console.log(path.join(__dirname, "../client/build/index.html"));
   res.sendFile(path.join(__dirname, "../client/build/index.html"));

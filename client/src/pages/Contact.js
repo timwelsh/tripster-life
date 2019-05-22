@@ -30,7 +30,7 @@ class Contact extends Component {
         // const { handleSubmit } = this.props;
         return (
             <div className='container'>
-                <div className='card hoverable' style={{ width:600, padding:20, margin:'0 auto', marginTop:"8rem" }}>
+                <div className='card hoverable' style={{ width:600, padding:20, margin:'0 auto', marginTop:"4rem" }}>
                     <div className="row">
                         <form method='POST' action='send' /* onSubmit={handleSubmit(this.onSubmit)} */ className="col s12" id='contactForm'>
                             <span className='card-title'>Send us a message</span>

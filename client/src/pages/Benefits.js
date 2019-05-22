@@ -4,7 +4,7 @@ class Benefits extends Component {
     render() {
         return (
             <div className='container'>
-                <div className='card hoverable' style={{ width:600, padding:20, margin:'0 auto', marginTop:"8rem" }}>
+                <div className='card hoverable' style={{ width:600, padding:20, margin:'0 auto', marginTop:"4rem" }}>
                     <span className='card-title'>Why use Tripster Life?</span>
                     <p className='flow-text' style={{lineHeight: "150%"}}>
                     Tripster Life is a Google Chrome extension 

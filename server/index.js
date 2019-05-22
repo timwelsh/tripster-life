@@ -4,5 +4,4 @@ console.log('APP ', app)
 const port = process.env.PORT || 5000;
 app.listen(port);
 console.log(`Server listening at ${port}`);
-console.log('THIS RUNNING?')
 // refactored code for easier test and feature scale

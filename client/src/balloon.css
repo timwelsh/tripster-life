@@ -1,0 +1,251 @@
+body {
+    overflow: hidden;
+}
+
+/* Cloud build */
+.clouds {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 200px 0;
+	background: #c9dbe9;
+	background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+	background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+	background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+}
+
+.cloud {
+    width: 200px; height: 60px;
+	background: #fff;
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+	position: relative; 
+}
+
+.cloud:before, .cloud:after {
+	content: '';
+	position: absolute; 
+	background: #fff;
+	width: 100px; height: 80px;
+	position: absolute; top: -15px; left: 10px;
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+	width: 120px; height: 120px;
+	top: -55px; left: auto; right: 15px;
+}
+
+/*Cloud animation*/
+.x1 {
+	-webkit-animation: moveclouds 25s linear infinite;
+	-moz-animation: moveclouds 25s linear infinite;
+	-o-animation: moveclouds 25s linear infinite;
+}
+
+.x2 {
+	left: 200px;
+	
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.6; /*opacity proportional to the size*/
+	
+	/*Speed will also be proportional to the size and opacity*/
+	/*Higher speed means less time in 's' = seconds*/
+	-webkit-animation: moveclouds 25s linear infinite;
+	-moz-animation: moveclouds 25s linear infinite;
+	-o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+	left: -250px; top: -200px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+	left: 470px; top: -250px;
+	
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	transform: scale(0.75);
+	opacity: 0.75; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 18s linear infinite;
+	-moz-animation: moveclouds 18s linear infinite;
+	-o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+	left: -150px; top: -150px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 18s linear infinite;
+	-moz-animation: moveclouds 18s linear infinite;
+	-o-animation: moveclouds 18s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+
+/* Balloon animation */
+.balloon {
+    width: 300px;
+    height: 300px;
+    background-color: #F74949;
+    border-radius: 50%;
+    border: 4px solid #D7E7EA;
+    position: absolute;
+    left: 50%;
+    top: 300px;
+    transform: translate(-50%);
+    animation: moving-balloon 3s ease infinite;
+    z-index: 5;
+}
+.balloon::after {
+    content: "";
+    position: absolute;
+    top: 240px;
+    left: 50%;
+    transform: translate(-50%);
+    border-top: 60px solid #F74949;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    height: 0;
+    width: 210px;
+}
+.balloon::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 300px;
+    transform: translate(-50%);
+    width: 150px;
+    height: 25px;
+    background-color: rgb(212, 63, 63);
+    border-radius: 5px;
+}
+  
+.basket {
+    width: 75px;
+    height: 28px;
+    background: rgb(233, 215, 184);
+    border-radius: 0 0 3px 3px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 672px;
+    animation: moving-basket 3s ease infinite;
+    z-index: 5;
+}
+.basket:before {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 12px;
+    background: rgb(216, 195, 157);
+    border-radius: 3px;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.basket:after {
+    content: "";
+    width: 60px;
+    height: 45px;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translate(-50%) perspective(50px) rotateX(-40deg);
+    border-left: 2px solid rgb(216, 195, 157);
+    border-right: 2px solid rgb(216, 195, 157);
+} 
+
+@keyframes moving-balloon {
+	0% 	 {transform:  translate(-50%)}
+	50% {transform: translate(-50%, -10%)}
+}
+
+@keyframes moving-basket {
+	0% 	 {transform:  translate(-50%)}
+	50% {transform: translate(-50%, -40%)}
+}
+
+/* Mountains */
+.mountains {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 500px;
+    bottom: 0;
+}
+.mountain {
+    position: relative;
+    width: 0;
+    height: 0;
+}
+#mountain1 {
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-bottom: 300px solid #878B93;
+    bottom: -275px;
+}
+#mountain2 {
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-bottom: 400px solid #BEC4CE;
+    bottom: -200px;
+}
+#mountain3 {
+    border-left: 325px solid transparent;
+    border-right: 325px solid transparent;
+    border-bottom: 550px solid rgb(218, 222, 230);
+    bottom: -50px;
+}
+#mountain4 {
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-bottom: 400px solid #BEC4CE;
+    bottom: -200px;
+}
+#mountain5 {
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-bottom: 300px solid #878B93;
+    bottom: -275px
+}
+
+/* Grass */
+.land {
+    position: relative;
+    margin-bottom: 0;
+    height: 500px;
+    background-image: linear-gradient(to bottom right, lightyellow, teal) 
+}

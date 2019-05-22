@@ -12,7 +12,7 @@ class About extends Component {
             <div className='container'>
                 <div style={{margin:'0 auto', marginTop:"8rem"}}>
                     <div className='row'>
-                        <div className="col s12 m6 l3">
+                        <div className="col s6">
                             <div className="card hoverable">
                                 <div className="card-image waves-effect waves-block waves-light">
                                 <img className="activator" src={tim} />
@@ -27,7 +27,7 @@ class About extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col s12 m6 l3">
+                        <div className="col s6">
                             <div className="card hoverable">
                                 <div className="card-image waves-effect waves-block waves-light">
                                 <img className="activator" src='https://avatars3.githubusercontent.com/u/45245526?s=460&v=4' />
@@ -44,7 +44,7 @@ class About extends Component {
                         </div>
                     </div>
                     <div className="row">
-                    <div className="col s12 m6 l3">
+                    <div className="col s6">
                             <div className="card hoverable">
                                 <div className="card-image waves-effect waves-block waves-light">
                                 <img className="activator" src='https://avatars3.githubusercontent.com/u/44719186?s=460&v=4' />
@@ -59,7 +59,7 @@ class About extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col s12 m6 l3">
+                        <div className="col s6">
                             <div className="card hoverable">
                                 <div className="card-image waves-effect waves-block waves-light">
                                 <img className="activator" src='https://avatars1.githubusercontent.com/u/20049012?s=460&v=4' />

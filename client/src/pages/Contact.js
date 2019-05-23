@@ -10,8 +10,8 @@ class Contact extends Component {
 
         axios({
           method: 'POST',
-          url: '/mail/sendmail',
-          //   url: 'http://localhost:5000/mail/sendmail',
+        //   url: '/mail/sendmail',
+            url: 'http://localhost:5000/mail/sendmail',
           data: {
             name,
             email,

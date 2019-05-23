@@ -17,7 +17,6 @@ class Contact extends Component {
             message
           }
         }).then((response) => {
-            console.log(response)
           if (response.data.msg === 'success') {
             alert('Message sent.');
         } else if (response.data.msg === 'fail') {

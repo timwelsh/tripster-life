@@ -37,12 +37,12 @@ class Header extends Component {
 
             <ul className="right hide-on-med-and-down">
               { !this.props.isAuth ?
-                [<li key="about">
-                  <Link to="/about">About</Link>
-                </li>, 
-                <li key="features">
+                [<li key="features">
                   <Link to="/features">Features</Link>
                 </li>,
+                <li key="about">
+                  <Link to="/about">About</Link>
+                </li>, 
                 <li key="contact">
                   <Link to="/contact">Contact</Link>
                 </li>,
@@ -54,12 +54,12 @@ class Header extends Component {
                 </li>] : null }
               
               { this.props.isAuth ?
-                [<li key="about">
-                  <Link to="/about">About</Link>
-                </li>, 
-                <li key="features">
+                [<li key="features">
                   <Link to="/features">Features</Link>
                 </li>,
+                <li key="about">
+                  <Link to="/about">About</Link>
+                </li>, 
                 <li key="contact">
                   <Link to="/contact">Contact</Link>
                 </li>,

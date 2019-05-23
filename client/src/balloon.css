@@ -2,11 +2,20 @@ body {
     overflow: hidden;
 }
 
+/* Grass */
+.land {
+    position: relative;
+    height: 150px;
+    bottom: 0px;
+    background-image: linear-gradient(to bottom right, lightyellow, teal);
+    z-index: 10;
+}
+
 /* Cloud build */
 .clouds {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 150px 0 0 0;
+    margin-top: 0px;
+    margin-bottom: -10px;
+    padding: 225px 0 0 0;
 	background: #c9dbe9;
 	background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
 	background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
@@ -202,7 +211,7 @@ body {
     position: absolute;
     display: flex;
     flex-direction: row;
-    margin-bottom: 75px;
+    margin-bottom: 200px;
     bottom: 0;
 }
 .mountain {
@@ -211,7 +220,7 @@ body {
     height: 0;
 }
 #mountain1 {
-    border-left: 100px solid transparent;
+    border-left: 120px solid transparent;
     border-right: 150px solid transparent;
     border-bottom: 200px solid rgba(219, 224, 233, 0.65);
     bottom: -375px;
@@ -231,7 +240,7 @@ body {
     border-right: 325px solid transparent;
     border-bottom: 550px solid #878B93;
     bottom: -100px;
-    right: 575px;
+    right: 375px;
     z-index: 10;
 }
 #mountain4 {
@@ -239,7 +248,7 @@ body {
     border-right: 350px solid transparent;
     border-bottom: 400px solid rgba(219, 224, 233, 0.65);
     bottom: -290px;
-    left: -1075px;
+    left: -950px;
     z-index: 1;
 }
 #mountain5 {
@@ -247,23 +256,14 @@ body {
     border-right: 450px solid transparent;
     border-bottom: 500px solid #BEC4CE;
     bottom: -375px;
-    left: -1800px;
+    left: -1650px;
     z-index: 5;
 }
 #mountain6 {
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
+    border-left: 180px solid transparent;
+    border-right: 150px solid transparent;
     border-bottom: 200px solid rgba(219, 224, 233, 0.65);
-    bottom: -375px;
-    left: -600px;
+    bottom: -425px;
+    left: -2120px;
     z-index: 1;
-}
-
-/* Grass */
-.land {
-    position: relative;
-    margin-bottom: 0;
-    height: 200px;
-    background-image: linear-gradient(to bottom right, lightyellow, teal);
-    z-index: 10;
 }

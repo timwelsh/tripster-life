@@ -23,7 +23,7 @@ class About extends Component {
                                 </div>
                                 <div className="card-reveal">
                                     <span className="card-title grey-text text-darken-4">Tim Welsh<i className="material-icons right">close</i></span>
-                                    <p>Tim conceptualized Tripster and is the group's DM (Database Master).</p>
+                                    <p>Tim conceptualized Tripster and is the group's DM (Database Master). Next trips stirring in me are sailing the Caribbean and going back to Ireland.</p>
                                 </div>
                             </div>
                         </div>

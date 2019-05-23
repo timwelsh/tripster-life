@@ -14,8 +14,10 @@ signToken = user => {
 module.exports = {
   signUp: async (req, res, next) => {
     console.log('ROUTE HIT')
-    const { email, password } = req.body;
+    const { email, password, birthday, firstName, lastName } = req.body;
     console.log('EMAIL ', email)
+    console.log(birthday)
+    console.log(lastName)
     // Check if there is a user with the same email
     let foundUser = await User.findOne({ "local.email": email });
     if (foundUser) { 
@@ -34,8 +36,13 @@ module.exports = {
       foundUser.methods.push('local')
       foundUser.local = {
         email: email, 
-        password: password
+        password: password,
+        birthday: birthday,
+        firstName: firstName,
+        lastName: lastName
       }
+
+      console.log(foundUser.local)
       await foundUser.save()
       // Generate the token
       const token = signToken(foundUser);
@@ -67,7 +74,10 @@ module.exports = {
       methods: ['local'],
       local: {
         email: email, 
-        password: password
+        password: password,
+        birthday: birthday,
+        lastName: lastName,
+        firstName: firstName
       }
     });
 

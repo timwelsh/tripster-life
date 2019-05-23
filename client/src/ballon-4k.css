@@ -26,8 +26,7 @@ body {
 	content: '';
 	position: absolute; 
 	background: #fff;
-    width: 100px; 
-    height: 80px;
+	width: 100px; height: 80px;
 	position: absolute; top: -15px; left: 10px;
 	border-radius: 100px;
 	-moz-border-radius: 100px;
@@ -109,14 +108,14 @@ body {
 
 /* Balloon animation */
 .balloon {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     background-color: #F74949;
     border-radius: 50%;
     border: 4px solid #D7E7EA;
     position: absolute;
     left: 50%;
-    top: 150px;
+    top: 300px;
     transform: translate(-50%);
     animation: moving-balloon 3s ease infinite;
     z-index: 20;
@@ -127,23 +126,23 @@ body {
 .balloon::after {
     content: "";
     position: absolute;
-    top: 150px;
+    top: 244px;
     left: 50%;
     transform: translate(-50%);
     border-top: 60px solid #F74949;
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
     height: 0;
-    width: 155px;
+    width: 215px;
     z-index: 20;
 }
 .balloon::before {
     content: "";
     position: absolute;
     left: 50%;
-    top: 205px;
+    top: 300px;
     transform: translate(-50%);
-    width: 100px;
+    width: 155px;
     height: 25px;
     background-color: rgb(212, 63, 63);
     border-radius: 5px;
@@ -151,21 +150,21 @@ body {
 }
   
 .basket {
-    width: 45px;
-    height: 30px;
+    width: 75px;
+    height: 50px;
     background: rgb(233, 215, 184);
     border-radius: 0 0 3px 3px;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    top: 415px;
+    top: 672px;
     animation: moving-basket 3s ease infinite;
     z-index: 20;
 }
 .basket:before {
     content: "";
     position: absolute;
-    width: 50px;
+    width: 80px;
     height: 12px;
     background: rgb(216, 195, 157);
     border-radius: 3px;
@@ -176,10 +175,10 @@ body {
 }
 .basket:after {
     content: "";
-    width: 55px;
-    height: 35px;
+    width: 60px;
+    height: 60px;
     position: absolute;
-    top: -30px;
+    top: -35px;
     left: 50%;
     transform: translate(-50%) perspective(50px) rotateX(-40deg);
     border-left: 2px solid rgb(216, 195, 157);
@@ -202,7 +201,7 @@ body {
     position: absolute;
     display: flex;
     flex-direction: row;
-    margin-bottom: 75px;
+    margin-bottom: 500px;
     bottom: 0;
 }
 .mountain {

@@ -9,9 +9,9 @@ require('dotenv').config();
 
 mongoose.Promise = global.Promise;
 if (process.env.NODE_ENV === 'test') {
-  mongoose.connect('mongodb://localhost/TripsterLifeTEST', { useNewUrlParser: true });
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 } else {
-  mongoose.connect('mongodb://localhost/TripsterLife', { useNewUrlParser: true });
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 }
 
 const app = express();

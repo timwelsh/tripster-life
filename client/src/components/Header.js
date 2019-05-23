@@ -24,7 +24,7 @@ class Header extends Component {
       <div style={style}>
           <nav>
             {/* <Link className="navbar-brand" to="/">Tripster Life</Link> */}
-            <div className="nav-wrapper light-blue darken-1" style={{zIndex:"11"}}>
+            <div className="nav-wrapper light-blue darken-1"style={{zIndex:"11"}}>
               <a href="/" className="brand-logo">
                 <img src={Logo} style={{ maxWidth:250, position:"absolute", top:-15, left:-45}}/>
               </a>
@@ -37,12 +37,12 @@ class Header extends Component {
 
             <ul className="right hide-on-med-and-down">
               { !this.props.isAuth ?
-                [<li key="about">
-                  <Link to="/about">About</Link>
-                </li>, 
-                <li key="features">
+                [<li key="features">
                   <Link to="/features">Features</Link>
                 </li>,
+                <li key="about">
+                  <Link to="/about">About</Link>
+                </li>, 
                 <li key="contact">
                   <Link to="/contact">Contact</Link>
                 </li>,
@@ -54,12 +54,12 @@ class Header extends Component {
                 </li>] : null }
               
               { this.props.isAuth ?
-                [<li key="about">
-                  <Link to="/about">About</Link>
-                </li>, 
-                <li key="features">
+                [<li key="features">
                   <Link to="/features">Features</Link>
                 </li>,
+                <li key="about">
+                  <Link to="/about">About</Link>
+                </li>, 
                 <li key="contact">
                   <Link to="/contact">Contact</Link>
                 </li>,

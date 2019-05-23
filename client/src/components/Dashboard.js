@@ -71,8 +71,8 @@ class Dashboard extends Component {
           <div className="col s12 m4">
             <div className="card hoverable" style={{width:300}}>
               <div className="card-image">
-                <img src='http://www.myptzone.com/assets/1/18/placeholder_male.png?9'/>
-                <span className="card-title">John Doe</span>
+                <img src='https://www.instagram.com/p/BvN35_3ndNO/'/>
+                <span className="card-title">Julie Ragsdale</span>
               </div>
               <div className="card-content">
                 <p>My goal is to sip coffee in every country!</p>

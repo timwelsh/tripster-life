@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import GoogleLogin from 'react-google-login';
+import julie from '../utils/tripster-juls.jpg'
 // import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 // import userImage from 
 
@@ -55,7 +56,6 @@ class Dashboard extends Component {
   //   console.log('Unlink Facebook')  
   //   await this.props.unlinkFacebook();
   // }
-
   
   render() {
     // document.addEventListener('DOMContentLoaded', function() {
@@ -71,11 +71,11 @@ class Dashboard extends Component {
           <div className="col s12 m4">
             <div className="card hoverable" style={{width:300}}>
               <div className="card-image">
-                <img src='http://www.myptzone.com/assets/1/18/placeholder_male.png?9'/>
-                <span className="card-title">John Doe</span>
+                <img src={julie} />
               </div>
               <div className="card-content">
-                <p>My goal is to sip coffee in every country!</p>
+                <span className="card-title">Julie Ragsdale</span>
+                <h6>My goal is to sip coffee in every country!</h6>
               </div>
               <div className="card-action">
                 {/* On click, pull up modal to update */}
@@ -152,9 +152,18 @@ class Dashboard extends Component {
               </div>
             </div>
             <div style={{float:'right', margin:15}}>
-              <a className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">add</i></a>
+              <a className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">edit</i></a>
             </div>
           </div>
+
+          {/* <a id="menu" className="waves-effect waves-light btn btn-floating" ><i className="material-icons">menu</i></a>
+
+          <div className="tap-target" data-target="menu" style={{position:'relative', marginBottom:'0'}}>
+            <div className="tap-target-content">
+              <h5>Psst...</h5>
+              <p>HAPPY BIRTHDAY!!</p>
+            </div>
+          </div> */}
         </div>
       </div>
     );

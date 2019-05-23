@@ -15,7 +15,16 @@ const userSchema = new Schema({
     },
     password: {
       type: String
-    }
+    },
+    birthday: {
+      type: String
+    },
+    firstName: {
+      type: String
+    },
+    lastName: {
+      type: String
+    },
   },
   google: {
     id: {

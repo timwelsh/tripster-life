@@ -5,8 +5,8 @@ class Features extends Component {
         return (
             <div className='container'>
                 <div className='card hoverable' style={{ width:1000, padding:20, margin:'0 auto', marginTop:"4rem" }}>
-                    <span className='card-title'>Why use Tripster Life?</span>
-                    <p className='flow-text' style={{lineHeight: "150%"}}>
+                    <h4>Why use Tripster Life?</h4>
+                    <h6 style={{lineHeight: "150%"}}>
                     Tripster Life is a Google Chrome extension 
                     that allows you, the travel junkie, to enter 
                     destinations for where you would like to go 
@@ -23,7 +23,7 @@ class Features extends Component {
                     cubicle world this a nice one minute respite from 
                     their daily work to soak in the excitement of their 
                     planned trip. 
-                    </p>
+                    </h6>
                 </div>
             </div>
         )

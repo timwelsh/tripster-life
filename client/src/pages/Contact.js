@@ -10,7 +10,7 @@ class Contact extends Component {
 
         axios({
           method: 'POST',
-          url: '/mail/sendmail',
+          url: '/sendmail',
           data: {
             name,
             email,

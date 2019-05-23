@@ -23,7 +23,7 @@ module.exports = {
         var email = req.body.email
         var message = req.body.message
         var content = `name: ${name} \n email: ${email} \n message: ${message}`
-        
+        console.log(transporter)
         console.log(content);
       
         const mail = {

@@ -68,7 +68,7 @@ class About extends Component {
                                 </div>
                                 <div className="card-reveal">
                                     <span className="card-title grey-text text-darken-4">Sherry Carrasco<i className="material-icons right">close</i></span>
-                                    <p>Sherry is our kick-ass project manager. While the developers get excited about implementing new ideas, she keeps our metaphorical hot air balloon tethered.</p>
+                                    <p>Sherry is our kick-ass project manager as a result of the coding knowledge she has gained through this boot camp course. She is able to estimate the time it takes to complete various tasks. While the developers get excited about implementing new ideas, she keeps our metaphorical hot air balloon tethered.</p>
                                 </div>
                             </div>
                         </div>

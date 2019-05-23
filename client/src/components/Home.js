@@ -30,6 +30,23 @@ export default () => {
           <div className='mountain' id='mountain6'></div>
         </div>
 
+        <div className='elephant'>
+          <div className='head'>
+            <div className='trunk'></div>
+            <div className='ear'></div>
+            <div className='eye'></div>
+            <div className='tusk'></div>
+          </div>
+
+          <div className='body'></div>
+
+          <div className='legs'>
+            <div className='leg front'></div>
+            <div className='leg back'></div>
+          </div>
+
+          <div className='tail'></div>
+        </div>
         <div className='land'></div>
       </main>
     </div>

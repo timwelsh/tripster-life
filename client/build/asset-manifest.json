@@ -1,12 +1,18 @@
 {
-  "main.js": "/static/js/main.0dda659c.chunk.js",
-  "main.js.map": "/static/js/main.0dda659c.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.614392df.chunk.js": "/static/js/2.614392df.chunk.js",
-  "static/js/2.614392df.chunk.js.map": "/static/js/2.614392df.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.0e84442a7faa50a3f87288c900631070.js": "/precache-manifest.0e84442a7faa50a3f87288c900631070.js",
-  "service-worker.js": "/service-worker.js",
-  "static/media/logo-1.png": "/static/media/logo-1.b574ffb7.png"
+  "files": {
+    "main.css": "/static/css/main.c4a82dbd.chunk.css",
+    "main.js": "/static/js/main.36f66444.chunk.js",
+    "main.js.map": "/static/js/main.36f66444.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.07527f14.chunk.js": "/static/js/2.07527f14.chunk.js",
+    "static/js/2.07527f14.chunk.js.map": "/static/js/2.07527f14.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5e821d6ccd36cf2d155c314faa0cb52d.js": "/precache-manifest.5e821d6ccd36cf2d155c314faa0cb52d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.c4a82dbd.chunk.css.map": "/static/css/main.c4a82dbd.chunk.css.map",
+    "static/media/logo-1.png": "/static/media/logo-1.b574ffb7.png",
+    "static/media/tim.png": "/static/media/tim.63adede6.png",
+    "static/media/tripster-juls.jpg": "/static/media/tripster-juls.554c52f3.jpg"
+  }
 }

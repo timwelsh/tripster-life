@@ -33,7 +33,10 @@ class Contact extends Component {
                 <div className='card hoverable' style={{ width:600, padding:20, margin:'0 auto', marginTop:"4rem" }}>
                     <div className="row">
                         <form method='POST' action='send' /* onSubmit={handleSubmit(this.onSubmit)} */ className="col s12" id='contactForm'>
-                            <span className='card-title'>Send us a message</span>
+                            <div className='center-align'>
+                                <div className='light-blue lighten-1'>
+                                    <span className='card-title white-text'><h4>Send us a message</h4></span>
+                                </div>
                                 <div className="row">
                                     <div className="input-field col s6">
                                     <input placeholder="Name" id="name" type="text" className="validate" />
@@ -47,7 +50,10 @@ class Contact extends Component {
                                     <textarea placeholder='Message' id="message" type="text" className="materialize-textarea" />
                                     </div>
                                 </div>
-                                <button type="submit" className="btn btn-primary" onClick={this.sendEmail} style={{marginTop: "1rem"}}>Send</button>
+                                <div className='center-align'>
+                                    <button type="submit" className="btn red accent-1" onClick={this.sendEmail} style={{marginTop: "1rem"}}>Send</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

@@ -41,12 +41,12 @@ class SignUp extends Component {
     const { handleSubmit } = this.props;
     return (
       <div className='container'>
-        <div className='card hoverable' style={{ width:450, padding:20, margin:'0 auto', marginTop:'4rem' }}>
-        <div className='light-blue lighten-1 valign-wrapper'>
+        <div className='card hoverable' style={{ width:450, padding:20, margin:'0 auto', marginTop:'10vh' }}>
           <div className='center-align'>
-            <span className='card-title white-text'><h4>Register</h4></span>
+            <div className='light-blue lighten-1' style={{ margin:0, padding:10 }}>
+              <span className='card-title white-text'><h4>Register</h4></span>
+            </div>
           </div>
-        </div>
           <div className='col'>
             <form onSubmit={handleSubmit(this.onSubmit)}>
               <Field

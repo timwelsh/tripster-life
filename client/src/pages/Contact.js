@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import axios from 'axios';
 
 class Contact extends Component {
@@ -30,28 +30,28 @@ class Contact extends Component {
         // const { handleSubmit } = this.props;
         return (
             <div className='container'>
-                <div className='card hoverable' style={{ width:600, padding:20, margin:'0 auto', marginTop:"4rem" }}>
-                    <div className="row">
-                        <form method='POST' action='send' /* onSubmit={handleSubmit(this.onSubmit)} */ className="col s12" id='contactForm'>
+                <div className='card hoverable' style={{ width:450, padding:10, margin:'0 auto', marginTop:'10vh' }}>
+                    <div className='row'>
+                        <form method='POST' action='send' /* onSubmit={handleSubmit(this.onSubmit)} */ className='col s12' id='contactForm'>
                             <div className='center-align'>
-                                <div className='light-blue lighten-1'>
+                                <div className='light-blue lighten-1' style={{ margin:0, marginTop:10, padding:10 }}>
                                     <span className='card-title white-text'><h4>Send us a message</h4></span>
                                 </div>
-                                <div className="row">
-                                    <div className="input-field col s6">
-                                    <input placeholder="Name" id="name" type="text" className="validate" />
+                                <div className='row'>
+                                    <div className='input-field col s6'>
+                                    <input placeholder='Name' id='name' type='text' className='validate' />
                                     </div>
-                                    <div className="input-field col s6">
-                                    <input placeholder='Email' id="email" type="email" className="validate" />
+                                    <div className='input-field col s6'>
+                                    <input placeholder='Email' id='email' type='email' className='validate' />
                                     </div>
                                 </div>
-                                <div className="row">
-                                    <div className="input-field col s12">
-                                    <textarea placeholder='Message' id="message" type="text" className="materialize-textarea" />
+                                <div className='row'>
+                                    <div className='input-field col s12'>
+                                    <textarea placeholder='Message' id='message' type='text' className='materialize-textarea' />
                                     </div>
                                 </div>
                                 <div className='center-align'>
-                                    <button type="submit" className="btn red accent-1" onClick={this.sendEmail} style={{marginTop: "1rem"}}>Send</button>
+                                    <button type='submit' className='btn red accent-1' onClick={this.sendEmail}>Send</button>
                                 </div>
                             </div>
                         </form>

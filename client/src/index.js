@@ -14,6 +14,7 @@ import SignIn from './components/SignIn';
 import Dashboard from './components/Dashboard';
 import About from './pages/About';
 import Features from './pages/Features';
+import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import reducers from './reducers';
 
@@ -34,8 +35,9 @@ ReactDOM.render(
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/dashboard" component={authGuard(Dashboard)} />
-        <Route exact path="/about" component={About} ></Route>
         <Route exact path="/features" component={Features} ></Route>
+        <Route exact path="/about" component={About} ></Route>
+        <Route exact path="/galley" component={Gallery} ></Route>
         <Route exact path="/contact" component={Contact} ></Route>
       </App>
     </BrowserRouter>

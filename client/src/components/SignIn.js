@@ -41,8 +41,12 @@ class SignIn extends Component {
     const { handleSubmit } = this.props;
     return (
       <div className='container'>
-        <div className='card hoverable ' style={{ width:450, padding:20, margin:'0 auto', marginTop:"4rem" }}>
-          <span className='card-title'>Login</span>
+        <div className='card hoverable ' style={{ width:450, padding:20, margin:'0 auto', marginTop:'10vh' }}>
+          <div className='center-align'>
+            <div className='light-blue lighten-1' style={{ margin:0, padding:10 }}>
+              <span className='card-title white-text'><h4>Login</h4></span>
+            </div>
+          </div>
           <form onSubmit={handleSubmit(this.onSubmit)}>
             <div>
               <Field
@@ -58,14 +62,17 @@ class SignIn extends Component {
                 placeholder='Password'
                 component={ CustomInput } />
 
-            { this.props.errorMessage ? 
-            <div className='alert alert-danger'>
-              { this.props.errorMessage }
-            </div> : null }
-            <button type='submit' className='btn btn-primary'>Login</button>
+              { this.props.errorMessage ? 
+              <div className='alert alert-danger'>
+                { this.props.errorMessage }
+              </div> : null }
+              <br></br>
+              <div className='center-align'>
+                <button type='submit' className='btn red accent-1'>Login</button>
+              </div>
             </div>
           </form>
-          <div>
+          <div className='center-align'>
             <p>Don't have an account yet? Sign up for one <a href='/signup'>here</a>!</p>
           </div>
           {/* <div className='col'>

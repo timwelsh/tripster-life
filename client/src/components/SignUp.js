@@ -40,77 +40,82 @@ class SignUp extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div className="container">
-        <div className='card hoverable' style={{ width:450, padding:20, margin:'0 auto', marginTop:"4rem" }}>
-        <span className='card-title'>Register</span>
-          <div className="col">
+      <div className='container'>
+        <div className='card hoverable' style={{ width:450, padding:20, margin:'0 auto', marginTop:'10vh' }}>
+          <div className='center-align'>
+            <div className='light-blue lighten-1' style={{ margin:0, padding:10 }}>
+              <span className='card-title white-text'><h4>Register</h4></span>
+            </div>
+          </div>
+          <div className='col'>
             <form onSubmit={handleSubmit(this.onSubmit)}>
               <Field
-                name="firstName"
-                type="text"
-                id="firstName"
-                placeholder="First Name"
+                name='firstName'
+                type='text'
+                id='firstName'
+                placeholder='First Name'
                 component={ CustomInput } />
               <Field
-                name="lastName"
-                type="text"
-                id="lastName"
-                placeholder="Last Name"
+                name='lastName'
+                type='text'
+                id='lastName'
+                placeholder='Last Name'
                 component={ CustomInput } />
                 <Field
-                  name="email"
-                  type="text"
-                  id="email"
-                  placeholder="Email"
+                  name='email'
+                  type='text'
+                  id='email'
+                  placeholder='Email'
                   component={ CustomInput } />
                 <Field
-                  name="password"
-                  type="password"
-                  id="password"
-                  placeholder="Password"
+                  name='password'
+                  type='password'
+                  id='password'
+                  placeholder='Password'
                   component={ CustomInput } />
-                  <Field
-                  name="birthday"
-                  type="date"
-                  id="birthday"
+                {/* <Field
+                  name='birthday'
+                  type='date'
+                  id='birthday'
                   label='Birthday'
-                  placeholder="Birthday"
-                  component={ CustomInput } />
+                  placeholder='Birthday'
+                  component={ CustomInput } /> */}
               { this.props.errorMessage ? 
-              <div className="alert alert-danger">
+              <div className='alert alert-danger center-align'>
                 { this.props.errorMessage }
               </div> : null }
               <br></br>
-              <button type="submit" className="btn btn-primary">Sign Up</button>
+              <div className='center-align'>
+                <button type='submit' className='btn red accent-1'>Sign Up</button>
+              </div>
             </form>
           </div>
-          <br></br>
-          <div className="col">
-            <div className="text-center">
-              <div className="alert alert-primary">
+          {/* <div className='col'>
+            <div className='text-center'>
+              <div className='alert alert-primary'>
                 Or sign up using third-party services
               </div>
               <br></br>
-              {/* <FacebookLogin
-                appId="number"
+              <FacebookLogin
+                appId='number'
                 render={renderProps => (
-                  <button style={{ marginRight: 15 }} className="btn btn-primary" onClick={renderProps.onClick}>Facebook</button>
+                  <button style={{ marginRight: 15 }} className='btn btn-primary' onClick={renderProps.onClick}>Facebook</button>
                 )}
-                fields="name,email,picture"
+                fields='name,email,picture'
                 callback={this.responseFacebook}
-                cssClass="btn btn-outline-primary"
-              /> */}
+                cssClass='btn btn-outline-primary'
+              />
               <GoogleLogin 
-                clientId="number"
+                clientId='number'
                 render={renderProps => (
-                  <button className="btn btn-danger" onClick={renderProps.onClick} disabled={renderProps.disabled}>Google</button>
+                  <button className='btn btn-danger' onClick={renderProps.onClick} disabled={renderProps.disabled}>Google</button>
                 )}
                 onSuccess={this.responseGoogle}
                 onFailure={this.responseGoogle}
-                className="btn btn-outline-danger"
+                className='btn btn-outline-danger'
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );

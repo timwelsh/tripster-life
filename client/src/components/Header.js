@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Logo from '../utils/logo-1.png';
+import Logo from '../utils/logo-new.png';
 
 import * as actions from '../actions';
 
@@ -43,6 +43,9 @@ class Header extends Component {
                 <li key="about">
                   <Link to="/about">About</Link>
                 </li>, 
+                <li key="gallery">
+                  <Link to="/gallery">Gallery</Link>
+                </li>, 
                 <li key="contact">
                   <Link to="/contact">Contact</Link>
                 </li>,
@@ -60,6 +63,9 @@ class Header extends Component {
                 <li key="about">
                   <Link to="/about">About</Link>
                 </li>, 
+                  <li key="gallery">
+                    <Link to="/gallery">Gallery</Link>
+                  </li>,               
                 <li key="contact">
                   <Link to="/contact">Contact</Link>
                 </li>,

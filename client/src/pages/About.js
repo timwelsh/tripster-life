@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import tim from '../utils/tim.png';
 
-// const style = {
-//     width: "33%"
-// }
+const cardStyle = {
+    borderRadius: 25
+}
+
+const imgStyle = {
+    borderTopRightRadius: 25,
+    borderTopLeftRadius: 25
+}
 
 class About extends Component {
 
@@ -13,8 +18,8 @@ class About extends Component {
                 <div style={{margin:'0 auto', marginTop:"4rem"}}>
                     <div className='row'>
                         <div className="col s12 m6 l3">
-                            <div className="card hoverable">
-                                <div className="card-image waves-effect waves-block waves-light">
+                            <div className="card hoverable" style={cardStyle}>
+                                <div className="card-image waves-effect waves-block waves-light" style={imgStyle}>
                                     <img className="activator" src={tim} />
                                 </div>
                                 <div className="card-content">
@@ -28,8 +33,8 @@ class About extends Component {
                             </div>
                         </div>
                         <div className="col s12 m6 l3">
-                            <div className="card hoverable">
-                                <div className="card-image waves-effect waves-block waves-light">
+                            <div className="card hoverable" style={cardStyle}>
+                                <div className="card-image waves-effect waves-block waves-light" style={imgStyle}>
                                     <img className="activator" src='https://avatars3.githubusercontent.com/u/45245526?s=460&v=4' />
                                 </div>
                                 <div className="card-content">
@@ -43,8 +48,8 @@ class About extends Component {
                             </div>
                         </div>
                         <div className="col s12 m6 l3">
-                            <div className="card hoverable">
-                                <div className="card-image waves-effect waves-block waves-light">
+                            <div className="card hoverable" style={cardStyle}>
+                                <div className="card-image waves-effect waves-block waves-light" style={imgStyle}>
                                     <img className="activator" src='https://avatars3.githubusercontent.com/u/44719186?s=460&v=4' />
                                 </div>
                                 <div className="card-content">
@@ -53,11 +58,11 @@ class About extends Component {
                                 </div>
                                 <div className="card-reveal">
                                     <span className="card-title grey-text text-darken-4">Julie Ragsdale<i className="material-icons right">close</i></span>
-                                    <p>Julie is the lead designer and even created our logo. She is passionate about UX/UI and design and loves houseplants, dogs, and coffee.</p>
+                                    <p>Julie is the lead designer and created our logo. She is passionate about UX/UI and loves houseplants, dogs, and coffee. She's excited to start planning a trip to Spain, especially to see the Jardín de Cactus in Guatiza!</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="col s12 m6 l3">
+                        {/* <div className="col s12 m6 l3">
                             <div className="card hoverable">
                                 <div className="card-image waves-effect waves-block waves-light">
                                     <img className="activator" src='https://avatars1.githubusercontent.com/u/20049012?s=460&v=4' />
@@ -71,7 +76,7 @@ class About extends Component {
                                     <p>Sherry is our kick-ass project manager as a result of the coding knowledge she has gained through this boot camp course. She is able to estimate the time it takes to complete various tasks. While the developers get excited about implementing new ideas, she keeps our metaphorical hot air balloon tethered.</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

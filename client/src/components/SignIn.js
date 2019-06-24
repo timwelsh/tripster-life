@@ -8,6 +8,14 @@ import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props
 import * as actions from '../actions';
 import CustomInput from './CustomInput';
 
+const cardStyle = {
+  borderRadius: 25,
+  width:450, 
+  padding:20,
+  margin:'0 auto', 
+  marginTop:"4rem"
+}
+
 class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +49,7 @@ class SignIn extends Component {
     const { handleSubmit } = this.props;
     return (
       <div className='container'>
-        <div className='card hoverable ' style={{ width:450, padding:20, margin:'0 auto', marginTop:"4rem" }}>
+        <div className='card hoverable' style={cardStyle}>
           <span className='card-title'>Login</span>
           <form onSubmit={handleSubmit(this.onSubmit)}>
             <div>
@@ -57,12 +65,12 @@ class SignIn extends Component {
                 id='password'
                 placeholder='Password'
                 component={ CustomInput } />
-
-            { this.props.errorMessage ? 
-            <div className='alert alert-danger'>
-              { this.props.errorMessage }
-            </div> : null }
-            <button type='submit' className='btn btn-primary'>Login</button>
+              { this.props.errorMessage ? 
+              <div className='alert alert-danger'>
+                { this.props.errorMessage }
+              </div> : null }
+              <br></br>
+              <button type='submit' className='btn light-green darken-1'>Login</button>
             </div>
           </form>
           <div>
@@ -94,7 +102,6 @@ class SignIn extends Component {
             </div>
           </div> */}
         </div>
-
       </div>
     );
   }

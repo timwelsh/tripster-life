@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Footer extends Component {
     render() {
         return (
-            <div className='row light-blue darken-1' style={{
+            <div className='row cyan darken-1' style={{
                 position:'fixed', 
                 width:'100vw', 
                 height:125, 

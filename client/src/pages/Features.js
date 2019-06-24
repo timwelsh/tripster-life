@@ -1,10 +1,18 @@
 import React, { Component } from "react";
 
+const cardStyle = {
+    borderRadius: 25,
+    width:600, 
+    padding:20,
+    margin:'0 auto', 
+    marginTop:"4rem"
+}
+
 class Features extends Component {
     render() {
         return (
             <div className='container'>
-                <div className='card hoverable' style={{ width:1000, padding:20, margin:'0 auto', marginTop:"4rem" }}>
+                <div className='card hoverable' style={cardStyle}>
                     <h4>Why use Tripster Life?</h4>
                     <h6 style={{lineHeight: "150%"}}>
                     Tripster Life is a Google Chrome extension 

@@ -15,7 +15,7 @@ export default () => {
 
         <a href='https://chrome.google.com/webstore/detail/tripster-life/gpfimpmniemnalhhoomaocokfblbmcjo' target='_blank'>
           <div className='balloon'>
-            <a className='btn btn-large' href='https://chrome.google.com/webstore/detail/tripster-life/gpfimpmniemnalhhoomaocokfblbmcjo' target='_blank' style={{color:'#fff', fontSize:16, zIndex:10, position:'relative', width:'100%', height:'50px', margin:'0 auto', top:'38%', borderRadius:'20%'}}>Add to Chrome</a>
+            <a className='btn btn-large light-green darken-1' href='https://chrome.google.com/webstore/detail/tripster-life/gpfimpmniemnalhhoomaocokfblbmcjo' target='_blank' style={{color:'#fff', fontSize:16, zIndex:10, position:'relative', width:'100%', height:'50px', margin:'0 auto', top:'38%', borderRadius:'20%'}}>Add to Chrome</a>
           </div>
         </a>
 

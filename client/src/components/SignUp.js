@@ -8,6 +8,14 @@ import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props
 import * as actions from '../actions';
 import CustomInput from './CustomInput';
 
+const cardStyle = {
+  borderRadius: 25,
+  width:450, 
+  padding:20,
+  margin:'0 auto', 
+  marginTop:"4rem"
+}
+
 class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +49,7 @@ class SignUp extends Component {
     const { handleSubmit } = this.props;
     return (
       <div className="container">
-        <div className='card hoverable' style={{ width:450, padding:20, margin:'0 auto', marginTop:"4rem" }}>
+        <div className='card hoverable' style={cardStyle}>
         <span className='card-title'>Register</span>
           <div className="col">
             <form onSubmit={handleSubmit(this.onSubmit)}>
@@ -69,7 +77,7 @@ class SignUp extends Component {
                   id="password"
                   placeholder="Password"
                   component={ CustomInput } />
-                  <Field
+                <Field
                   name="birthday"
                   type="date"
                   id="birthday"
@@ -81,17 +89,20 @@ class SignUp extends Component {
                 { this.props.errorMessage }
               </div> : null }
               <br></br>
-              <button type="submit" className="btn btn-primary">Sign Up</button>
+              <button type="submit" className="btn light-green darken-1">Sign Up</button>
             </form>
+            <div>
+              <p>Already have an account? Log in <a href='/signup'>here</a>!</p>
+            </div>
           </div>
           <br></br>
-          <div className="col">
+          {/* <div className="col">
             <div className="text-center">
               <div className="alert alert-primary">
                 Or sign up using third-party services
               </div>
               <br></br>
-              {/* <FacebookLogin
+              <FacebookLogin
                 appId="number"
                 render={renderProps => (
                   <button style={{ marginRight: 15 }} className="btn btn-primary" onClick={renderProps.onClick}>Facebook</button>
@@ -99,7 +110,7 @@ class SignUp extends Component {
                 fields="name,email,picture"
                 callback={this.responseFacebook}
                 cssClass="btn btn-outline-primary"
-              /> */}
+              />
               <GoogleLogin 
                 clientId="number"
                 render={renderProps => (
@@ -110,7 +121,7 @@ class SignUp extends Component {
                 className="btn btn-outline-danger"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );
